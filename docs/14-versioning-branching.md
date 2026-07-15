@@ -7,6 +7,8 @@ Use [presentation/README.md](../presentation/README.md) as the operational track
 
 **Command track (copy-paste):** [16-releases.md](./16-releases.md)
 
+**Scope of this doc:** tag and GitHub Release rules below apply to the **private** Engineering Organization (`agentic-engineering-in-practice`). The public Teaching Product is a projection — commit/push required after sync; mirroring the tag is optional. See [16-releases.md §1.1](./16-releases.md#11-private-vs-public-duties).
+
 ---
 
 ## 1. Philosophy

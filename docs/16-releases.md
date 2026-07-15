@@ -9,12 +9,14 @@
 Use this file when you are ready to **tag, release, and publish**. Use `14-versioning-branching.md` for philosophy and anti-patterns.
 
 ```text
-Private (Engineering Organization)
-  main → quality gates → annotated tag → GitHub Release
-        → _meta/release-checklist.md → Publish-Release.ps1
-              →
-Public (Teaching Product: building-ai-agents-with-openai)
+Private (Engineering Organization)          Public (Teaching Product)
+  main → gates → annotated tag                 Publish-Release.ps1 → review
+       → GitHub Release                        → commit + push to main
+       → bind version.md / manifest            → (optional) same milestone tag
+       → Publish-Release.ps1  ───────────────► → (optional) public GitHub Release
 ```
+
+**Source of truth:** curriculum tags and GitHub Releases live in the **private** repo. The public repo is a curated **projection** — sync and push are required; mirroring the tag is optional.
 
 ---
 
@@ -25,11 +27,23 @@ Public (Teaching Product: building-ai-agents-with-openai)
 | Engineering Organization | Private repo `agentic-engineering-in-practice` |
 | Teaching Product | Public repo `building-ai-agents-with-openai` (projection only) |
 | Application | One evolving app under `src/` ([ADR-001](./ADRs/ADR-001-single-codebase.md)) |
-| Milestone | Annotated Git tag ([ADR-002](./ADRs/ADR-002-git-tags.md)) |
+| Milestone | Annotated Git tag on **private** `main` ([ADR-002](./ADRs/ADR-002-git-tags.md)) |
 | Course package | `sessions/session-NN-*/` + `version.md` (**no** nested `src/`) |
-| Private GitHub Release | Same name as the milestone tag |
-| Where to tag | On `main` after session work is merged |
+| Private GitHub Release | **Required** — same name as the milestone tag |
+| Where to tag | On private `main` after session work is merged |
 | Public sync | `_meta/Publish-Release.ps1` (dry-run by default; pass `-Execute`) |
+
+### 1.1 Private vs public duties
+
+| Step | Private (`agentic-engineering-in-practice`) | Public (`building-ai-agents-with-openai`) |
+| ---- | ------------------------------------------ | ---------------------------------------- |
+| Quality gates + demo | **Required** | Smoke after sync (run projected `src/`) |
+| Annotated milestone tag (`vN.0-…`) | **Required** — curriculum contract | **Optional** — same name helps learners; not the source of truth |
+| GitHub Release | **Required** | **Optional** — private Release notes are canonical |
+| Bind `version.md` / `released_sessions` | **Required** (post-tag docs follow-up) | N/A (`_meta/` is never published) |
+| `Publish-Release.ps1 -Execute` | Run from private | Writes files into public clone |
+| Review diff → commit → push | N/A for projection | **Required** — sync alone does not publish |
+| Edit `src/` application code | Only here | **Never** — fix private, re-publish |
 
 **Session 1 completion tag:** `v1.0-build-your-first-agent`
 
@@ -186,7 +200,7 @@ git rev-parse v1.0-build-your-first-agent
 
 ### 3.10 Publish to Teaching Product
 
-Clone or confirm `../building-ai-agents-with-openai` exists first.
+Clone or confirm `../building-ai-agents-with-openai` exists first. Run from the **private** repo after the private tag and GitHub Release exist.
 
 ```powershell
 # Dry-run (default) — prints sync/ignore plan
@@ -196,13 +210,33 @@ pwsh -File _meta/Publish-Release.ps1 -Tag v1.0-build-your-first-agent
 pwsh -File _meta/Publish-Release.ps1 -Tag v1.0-build-your-first-agent -Execute
 ```
 
-Then in the **public** repo: review diff → commit → push → optionally tag the public repo with the same milestone name.
+`-Execute` only **copies** files into the public clone. Finish the Teaching Product publish in the **public** repo:
+
+```powershell
+cd ../building-ai-agents-with-openai
+git checkout main
+git status   # review projection; remove anything that should stay ignored (e.g. sessions/_templates)
+
+# Required
+git add -A
+git commit -m "Publish projection for v1.0-build-your-first-agent"
+git push origin main
+
+# Optional — same milestone name for learner checkout convenience
+git tag -a v1.0-build-your-first-agent -m "Session 1 projection: Build Your First AI Agent"
+git push origin v1.0-build-your-first-agent
+
+# Optional — public GitHub Release (private notes remain canonical)
+# gh release create v1.0-build-your-first-agent --title "Session 1: Build Your First AI Agent" --notes-file presentation/demo-01/release-notes.md
+```
+
+Then record the **public publish date** in the §6 ledger (private docs follow-up).
 
 Do **not** edit application code in the Teaching Product; fix bugs in private `src/` and re-publish.
 
 ### 3.11 Attendee / learner replay
 
-From either product (after tags exist):
+**Preferred:** private Engineering Organization (or any clone that has the curriculum tag):
 
 ```powershell
 git fetch --tags
@@ -211,11 +245,13 @@ git checkout v1.0-build-your-first-agent
 # Or sessions/session-01-build-your-first-agent/README.md
 ```
 
+**Public Teaching Product:** use `main` after the projection commit is pushed. If the optional public tag was created, the same `git checkout v1.0-build-your-first-agent` works there too.
+
 ---
 
 ## 4. Sessions 2–15 — generic command track
 
-Replace `N`, titles, and slugs from §2. Keep the same order: gates → docs → tag → `gh release` → bind `version.md` → `Publish-Release.ps1`.
+Replace `N`, titles, and slugs from §2. Keep the same order: gates → docs → private tag → private `gh release` → bind `version.md` → `Publish-Release.ps1` → public commit/push (optional public tag).
 
 ### 4.1 Start tag (before the session)
 

@@ -180,6 +180,8 @@ Teaching Product: building-ai-agents-with-openai
 
 Public `src/` is a **projection** of private `src/` at a tagged milestone. Do not develop the application in the public repository.
 
+**Release ownership:** annotated curriculum tags and GitHub Releases are created in the **private** Engineering Organization. Publishing copies curated paths into the Teaching Product; maintainers must **commit and push** that projection. Mirroring the same tag name (and an optional public Release) in the public repo is convenient for learners but is **not** the curriculum source of truth. Operational table: [16-releases.md §1.1](../16-releases.md#11-private-vs-public-duties).
+
 ### Public repository projection (Teaching Product)
 
 ```text
