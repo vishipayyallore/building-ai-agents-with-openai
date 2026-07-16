@@ -1,0 +1,42 @@
+[project]
+name = "agentic-engineering-in-practice"
+version = "0.1.0"
+description = "Agentic Engineering in Practice — hands-on evolving AI agent application (Demo 1+)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.6.0",
+    "openai-agents>=0.2.0",
+    "httpx>=0.28.0",
+    "mcp>=1.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.8.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["src/backend/tests", "src/mcp-server/tests"]
+pythonpath = ["src/backend", "src/mcp-server"]
+markers = [
+    "integration: live OpenAI + MCP smoke (requires OPENAI_API_KEY)",
+]
+addopts = "-m 'not integration'"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src/backend", "src/mcp-server"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
