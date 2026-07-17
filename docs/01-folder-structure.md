@@ -58,14 +58,14 @@ src/backend/
 |       |-- chat.py
 |       `-- llm.py
 `-- tests/
-	|-- conftest.py
-	|-- test_agent_chat_mocked.py
-	|-- test_agent_intent.py
-	|-- test_api.py
-	|-- test_event_bus.py
-	|-- test_maturity.py
-	|-- test_models_serialization.py
-	`-- test_smoke_contract.py
+    |-- conftest.py
+    |-- test_agent_chat_mocked.py
+    |-- test_agent_intent.py
+    |-- test_api.py
+    |-- test_event_bus.py
+    |-- test_maturity.py
+    |-- test_models_serialization.py
+    `-- test_smoke_contract.py
 ```
 
 ### src/frontend
@@ -88,37 +88,37 @@ src/frontend/
 |-- public/
 |   `-- favicon.png
 `-- src/
-	|-- App.tsx
-	|-- index.css
-	|-- main.tsx
-	|-- vite-env.d.ts
-	|-- components/
-	|   |-- DecisionTimeline.tsx
-	|   |-- DecisionTimeline.test.tsx
-	|   |-- FinalResponse.tsx
-	|   |-- Footer.tsx
-	|   |-- Header.tsx
-	|   |-- Layout.tsx
-	|   |-- MaturityContrastPanel.tsx
-	|   |-- PromptPanel.tsx
-	|   |-- ToolExecution.tsx
-	|   |-- ToolRegistry.tsx
-	|   `-- UserMenu.tsx
-	|-- hooks/
-	|   |-- useChat.ts
-	|   `-- useDirectLlm.ts
-	|-- pages/
-	|   |-- HomePage.tsx
-	|   |-- HomePage.test.tsx
-	|   |-- Level1DemoPage.tsx
-	|   `-- Level2DashboardPage.tsx
-	|-- services/
-	|   |-- api.ts
-	|   `-- api.test.ts
-	|-- test/
-	|   `-- setup.ts
-	`-- types/
-		`-- decision-event.ts
+    |-- App.tsx
+    |-- index.css
+    |-- main.tsx
+    |-- vite-env.d.ts
+    |-- components/
+    |   |-- DecisionTimeline.tsx
+    |   |-- DecisionTimeline.test.tsx
+    |   |-- FinalResponse.tsx
+    |   |-- Footer.tsx
+    |   |-- Header.tsx
+    |   |-- Layout.tsx
+    |   |-- MaturityContrastPanel.tsx
+    |   |-- PromptPanel.tsx
+    |   |-- ToolExecution.tsx
+    |   |-- ToolRegistry.tsx
+    |   `-- UserMenu.tsx
+    |-- hooks/
+    |   |-- useChat.ts
+    |   `-- useDirectLlm.ts
+    |-- pages/
+    |   |-- HomePage.tsx
+    |   |-- HomePage.test.tsx
+    |   |-- Level1DemoPage.tsx
+    |   `-- Level2DashboardPage.tsx
+    |-- services/
+    |   |-- api.ts
+    |   `-- api.test.ts
+    |-- test/
+    |   `-- setup.ts
+    `-- types/
+        `-- decision-event.ts
 ```
 
 ### src/mcp-server
@@ -135,8 +135,8 @@ src/mcp-server/
 |   |-- calculator.py
 |   `-- weather.py
 `-- tests/
-	|-- test_calculator.py
-	`-- test_weather.py
+    |-- test_calculator.py
+    `-- test_weather.py
 ```
 
 ## Session content

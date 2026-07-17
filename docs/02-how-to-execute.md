@@ -71,12 +71,12 @@ npm run dev
 
 Open:
 
-- Home: http://localhost:5173/
-- Level 2 dashboard: http://localhost:5173/demo/level-2
+- Home: [http://localhost:5173/](http://localhost:5173/)
+- Level 2 dashboard: [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
 
 ## 4. Verify quickly
 
-- Health endpoint: http://127.0.0.1:8000/health
+- Health endpoint: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
 - Demo prompt 1: What is 15 * 23?
 - Demo prompt 2: What's the weather in Seattle?
 
