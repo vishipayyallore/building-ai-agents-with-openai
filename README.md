@@ -2,7 +2,7 @@
 
 ![Program](https://img.shields.io/badge/M.Sc-Data%20Science%20%26%20AI-8ecae6)
 ![Status](https://img.shields.io/badge/Status-Active-b7e4c7)
-![Python](https://img.shields.io/badge/Python-3.12-a0c4ff)
+![Python](https://img.shields.io/badge/Python-3.13-a0c4ff)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Active-ffd6a5)
 ![Focus](https://img.shields.io/badge/Focus-Foundations%20%26%20Algorithms-cdb4db)
 ![Track](https://img.shields.io/badge/Track-AI%20Agents-90e0ef)
@@ -12,6 +12,13 @@
 Hands-on workshop repo for **Swamy's Tech Skills Academy**: one evolving app (React + FastAPI + OpenAI Agent SDK + MCP) taught across live sessions.
 
 This repository is the **Teaching Product** — clone it, run today's demo, follow the released session guide. Application code is published from a private Engineering Organization; do not develop the app here.
+
+---
+
+## Docs
+
+- [docs/01-folder-structure.md](docs/01-folder-structure.md)
+- [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
 
 ---
 
@@ -85,6 +92,7 @@ Health check: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
 ```text
 building-ai-agents-with-openai/
 ├── README.md          ← product homepage (this file)
+├── docs/              # Supporting repository docs
 ├── src/               # Latest released application
 ├── sessions/          # Released session guides only
 ├── LICENSE

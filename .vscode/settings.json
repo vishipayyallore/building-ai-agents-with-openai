@@ -15,6 +15,10 @@
         "/^\\$root='d:/GitHub/building-ai-agents-with-openai'; git -C \\$root ls-files \\*\\.md \\| ForEach-Object \\{ \\$rel=\\$_; \\$file=Join-Path \\$root \\$rel; \\$dir=Split-Path \\$file; \\$content=Get-Content -Path \\$file -Raw; \\[regex\\]::Matches\\(\\$content,'\\\\\\[\\[\\^\\\\\\]\\]\\+\\\\\\]\\\\\\(\\(\\[\\^\\)\\]\\+\\)\\\\\\)'\\) \\| ForEach-Object \\{ \\$target=\\$_\\.Groups\\[1\\]\\.Value; if\\(\\$target -match '\\^\\(https\\?:\\|mailto:\\|#\\)'\\)\\{ return \\}; \\$clean=\\$target\\.Split\\('#'\\)\\[0\\]; if\\(\\[string\\]::IsNullOrWhiteSpace\\(\\$clean\\)\\)\\{ return \\}; \\$resolved=Join-Path \\$dir \\$clean; if\\(-not \\(Test-Path \\$resolved\\)\\)\\{ Write-Output \"\\$rel -> \\$target\" \\} \\} \\}$/": {
             "approve": true,
             "matchCommandLine": true
+        },
+        "/^Test-Path d:/GitHub/building-ai-agents-with-openai/source-material$/": {
+            "approve": true,
+            "matchCommandLine": true
         }
     }
 }
