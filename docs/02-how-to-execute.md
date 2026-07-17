@@ -9,10 +9,12 @@ This guide explains how to run the Demo 1 application in this repository.
 
 ## Prerequisites
 
-- Python 3.13+
-- Node.js 20 LTS
-- uv (latest)
-- Git 2.x
+| Tool | Version |
+| ---- | ------- |
+| Python | 3.13+ |
+| Node.js | 20 LTS |
+| [uv](https://docs.astral.sh/uv/) | latest |
+| Git | 2.x |
 
 ## 1. Clone and configure
 
