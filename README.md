@@ -15,22 +15,7 @@ Use this as the **Teaching Product**: clone it, run the current demo, and follow
 
 ---
 
-## 1. Session roadmap
-
-| Session | Status |
-| ------- | :----: |
-| Session 1 – Build Your First AI Agent | ✅ Available |
-| Session 2 – Stateful Agents | 🚧 Coming Soon |
-| Session 3 – Multi-Provider Agents | 🚧 Coming Soon |
-| Session 4 – Context Engineering | 🚧 Coming Soon |
-| Session 5 – Knowledge-Driven Agents | 🚧 Coming Soon |
-| Session 6 – Multi-Agent Engineering | 🚧 Coming Soon |
-| Session 7 – Production Foundations | 🚧 Coming Soon |
-| Session 8 – Evaluation & Guardrails | 🚧 Coming Soon |
-| Session 9 – Local Capstone | 🚧 Coming Soon |
-| Sessions 10–15 – Platform / enterprise track | 🚧 Coming Soon |
-
-## 2. Learning journey
+## 1. Learning journey
 
 ```mermaid
 flowchart TB
@@ -59,6 +44,21 @@ flowchart TB
 	class S1,S2,S3,S4,S5,S6,S7,S8,S9 phase1;
 	class S10,S11,S12,S13,S14,S15 phase2;
 ```
+
+	## 2. Session roadmap
+
+	| Session | Status |
+	| ------- | :----: |
+	| Session 1 – Build Your First AI Agent | ✅ Available |
+	| Session 2 – Stateful Agents | 🚧 Coming Soon |
+	| Session 3 – Multi-Provider Agents | 🚧 Coming Soon |
+	| Session 4 – Context Engineering | 🚧 Coming Soon |
+	| Session 5 – Knowledge-Driven Agents | 🚧 Coming Soon |
+	| Session 6 – Multi-Agent Engineering | 🚧 Coming Soon |
+	| Session 7 – Production Foundations | 🚧 Coming Soon |
+	| Session 8 – Evaluation & Guardrails | 🚧 Coming Soon |
+	| Session 9 – Local Capstone | 🚧 Coming Soon |
+	| Sessions 10–15 – Platform / enterprise track | 🚧 Coming Soon |
 
 ## 3. Session 1 - Build Your First AI Agent
 
