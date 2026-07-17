@@ -12,4 +12,4 @@ Primary paths:
 - `sessions`
 - `docs`
 
-Do not introduce references to `src/weekN`, `source-material`, or `.cursor` trees in this repository.
+Do not introduce references to non-existent or cross-repo directory trees in this repository.

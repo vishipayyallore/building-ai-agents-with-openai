@@ -37,7 +37,7 @@ jobs:
 
       - name: Block stale cross-repo references
         run: |
-          ! grep -R -n -E "t2-machine-learning|src/weekN|source-material/|\.cursor/|CLAUDE\.md|\.clinerules|\.opencode" .github || (echo "Found stale imported references" && exit 1)
+          ! grep -R -n -E "t2-machine-learning|src/weekN|source-material/|\.cursor/|CLAUDE\.md|\.clinerules|\.opencode" .github --exclude-dir=workflows || (echo "Found stale imported references" && exit 1)
 
       - name: Lint markdown in .github
         uses: actions/setup-node@v4

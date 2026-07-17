@@ -3,8 +3,8 @@ description: Source material handling
 globs: *
 ---
 
-# Source Material Rule
+# Reference Material Rule
 
-If a `source-material/` folder is introduced later, treat it as reference-only unless explicitly instructed otherwise.
+Treat any future reference-only folders as non-runtime content unless explicitly instructed otherwise.
 
-Do not assume such a folder exists in current repository structure.
+Do not assume such folders exist in the current repository structure.
