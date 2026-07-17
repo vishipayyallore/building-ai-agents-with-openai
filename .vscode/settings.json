@@ -55,6 +55,14 @@
         "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 \"README\\.md\" \"docs/\\*\\*/\\*\\.md\" \"sessions/\\*\\*/\\*\\.md\" \"\\.github/\\*\\*/\\*\\.md\" \"src/backend/\\*\\*/\\*\\.md\" \"src/mcp-server/\\*\\*/\\*\\.md\" --no-globs$/": {
             "approve": true,
             "matchCommandLine": true
+        },
+        "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 \"README\\.md\" \"docs/\\*\\.md\" \"sessions/\\*\\*/\\*\\.md\" \"src/backend/README\\.md\" \"src/mcp-server/README\\.md\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 README\\.md$/": {
+            "approve": true,
+            "matchCommandLine": true
         }
     }
 }

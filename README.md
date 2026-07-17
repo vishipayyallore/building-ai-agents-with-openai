@@ -15,7 +15,7 @@ Use this as the **Teaching Product**: clone it, run the current demo, and follow
 
 ---
 
-## Session roadmap
+## 1. Session roadmap
 
 | Session | Status |
 | ------- | :----: |
@@ -30,7 +30,37 @@ Use this as the **Teaching Product**: clone it, run the current demo, and follow
 | Session 9 – Local Capstone | 🚧 Coming Soon |
 | Sessions 10–15 – Platform / enterprise track | 🚧 Coming Soon |
 
-### Session 1 — Build Your First AI Agent
+## 2. Learning journey
+
+```mermaid
+flowchart TB
+	S1["AI Agent"]
+	S2["Stateful AI Agent"]
+	S3["Multi-Provider AI"]
+	S4["Context Engineering"]
+	S5["Knowledge Agent"]
+	S6["Multi-Agent System"]
+	S7["Production Agent"]
+	S8["Evaluation & Guardrails"]
+	S9["Local Capstone"]
+	S10["Distributed Persistence"]
+	S11["Event-Driven AI"]
+	S12["Cloud-Native AI"]
+	S13["Kubernetes & Cloud"]
+	S14["Enterprise Operations"]
+	S15["Enterprise Capstone"]
+
+	S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
+	S9 --> S10 --> S11 --> S12 --> S13 --> S14 --> S15
+
+	classDef phase1 fill:#eef6ff,stroke:#6b9ac4,color:#1f2937,stroke-width:1px;
+	classDef phase2 fill:#f3f8f1,stroke:#7ca982,color:#1f2937,stroke-width:1px;
+
+	class S1,S2,S3,S4,S5,S6,S7,S8,S9 phase1;
+	class S10,S11,S12,S13,S14,S15 phase2;
+```
+
+## 3. Session 1 - Build Your First AI Agent
 
 **Tag:** `v1.0-build-your-first-agent`
 
@@ -38,14 +68,14 @@ Guide: [sessions/session-01-build-your-first-agent/README.md](sessions/session-0
 
 ---
 
-## Docs
+## 4. Docs
 
 - [docs/01-folder-structure.md](docs/01-folder-structure.md)
 - [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
 
 ---
 
-## How to run today's demo
+## 5. How to run today's demo
 
 Use the full execution guide:
 
@@ -58,7 +88,7 @@ Quick links:
 
 ---
 
-## What's in this repo
+## 6. What's in this repo
 
 ```text
 building-ai-agents-with-openai/
@@ -81,7 +111,7 @@ git checkout v1.0-build-your-first-agent
 
 ---
 
-## Stack
+## 7. Stack
 
 - **Frontend:** React, TypeScript, Vite, Tailwind CSS
 - **Backend:** Python 3.13, FastAPI, OpenAI Agent SDK, Pydantic
@@ -89,6 +119,6 @@ git checkout v1.0-build-your-first-agent
 
 ---
 
-## License
+## 8. License
 
 MIT — see [LICENSE](LICENSE).

@@ -1,0 +1,13 @@
+globs:
+  - "README.md"
+  - "docs/**/*.md"
+  - "sessions/**/*.md"
+  - "src/**/*.md"
+  - ".github/**/*.md"
+
+ignores:
+  - "**/node_modules/**"
+  - "**/.venv/**"
+  - "**/dist/**"
+  - "**/coverage/**"
+  - "**/build/**"
