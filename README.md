@@ -1,5 +1,14 @@
 # Building AI Agents with OpenAI
 
+![Program](https://img.shields.io/badge/M.Sc-Data%20Science%20%26%20AI-8ecae6)
+![Status](https://img.shields.io/badge/Status-Active-b7e4c7)
+![Python](https://img.shields.io/badge/Python-3.12-a0c4ff)
+![Jupyter](https://img.shields.io/badge/Jupyter-Active-ffd6a5)
+![Focus](https://img.shields.io/badge/Focus-Foundations%20%26%20Algorithms-cdb4db)
+![Track](https://img.shields.io/badge/Track-AI%20Agents-90e0ef)
+![Workshop](https://img.shields.io/badge/Workshop-Live%20Sessions-ffadad)
+![Level](https://img.shields.io/badge/Level-Beginner%20to%20Advanced-d8f3dc)
+
 Hands-on workshop repo for **Swamy's Tech Skills Academy**: one evolving app (React + FastAPI + OpenAI Agent SDK + MCP) taught across live sessions.
 
 This repository is the **Teaching Product** — clone it, run today's demo, follow the released session guide. Application code is published from a private Engineering Organization; do not develop the app here.
