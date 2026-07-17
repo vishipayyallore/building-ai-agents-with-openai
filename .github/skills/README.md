@@ -11,12 +11,14 @@ Skills here should target this workshop app and its real structure:
 - `src/mcp-server`
 - `sessions/`
 - `docs/`
+- `tools/`
+- `.github/`
 
 ## Included skills
 
 | Folder | Purpose |
 |--------|---------|
-| `ml-algorithms-from-scratch` | Core repository context and architecture guidance |
+| `workshop-app-core` | Core repository context and architecture guidance |
 | `ci-checks` | CI-aligned local checks for backend/frontend/docs |
 | `docs-verification` | Validate docs, links, commands, and path accuracy |
 | `e2e-testing` | Smoke path for backend + frontend + MCP behavior |

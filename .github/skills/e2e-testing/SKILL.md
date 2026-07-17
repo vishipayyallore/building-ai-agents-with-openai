@@ -9,9 +9,10 @@ description: Smoke test end-to-end workshop behavior (backend up, frontend up, h
 
 1. Start backend from repo root.
 2. Start frontend from `src/frontend`.
-3. Open `/demo/level-2`.
-4. Verify health endpoint returns ok.
-5. Run one direct LLM prompt and one MCP-tool prompt.
+3. Do **not** start MCP separately — the backend spawns it via stdio on `POST /api/chat`.
+4. Open `/demo/level-2`.
+5. Verify health endpoint returns ok.
+6. Run one direct LLM prompt and one MCP-tool prompt.
 
 ## Quick checks
 

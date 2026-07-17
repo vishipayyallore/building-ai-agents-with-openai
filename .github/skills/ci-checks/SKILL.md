@@ -27,6 +27,10 @@ npm run build
 
 ## Documentation lint
 
+Full-repo scope (matches `ci-documentation.yml`):
+
 ```powershell
 npx --yes markdownlint-cli2 "README.md" "docs/**/*.md" "sessions/**/*.md" ".github/**/*.md" "src/**/*.md"
 ```
+
+`ci-agent-docs-guard.yml` is a narrower `.github`-only lint plus existence checks — use the command above for full documentation coverage.

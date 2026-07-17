@@ -29,6 +29,8 @@ It contains one evolving app stack:
 - `src/backend`: API + runtime logic + backend tests
 - `src/frontend`: web UI + frontend tests
 - `src/mcp-server`: MCP tools + MCP tests
+- `tools/`: helper scripts (not part of the runtime app)
+- `.github/`: Copilot instructions, rules, skills, agents, workflows
 
 ## Run commands (PowerShell)
 

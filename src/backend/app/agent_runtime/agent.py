@@ -23,13 +23,16 @@ def _mcp_stdio_server() -> MCPServerStdio:
     server_dir = settings.mcp_server_dir.resolve()
     server_script = server_dir / "server.py"
     uv = shutil.which("uv") or "uv"
+    env = {**os.environ, "PYTHONPATH": str(server_dir)}
+    if settings.openweather_api_key:
+        env["OPENWEATHER_API_KEY"] = settings.openweather_api_key
     return MCPServerStdio(
         name="agentic-tools",
         params={
             "command": uv,
             "args": ["run", "python", str(server_script)],
             "cwd": str(REPO_ROOT),
-            "env": {**os.environ, "PYTHONPATH": str(server_dir)},
+            "env": env,
         },
         cache_tools_list=True,
     )
@@ -69,7 +72,7 @@ async def run_agent_chat(message: str, session_id: str | None = None) -> ChatRes
         return ChatResponse(
             session_id=sid,
             request_id=rid,
-            response="Cannot run the agent without OPENAI_API_KEY. See docs/03-getting-started.md.",
+            response="Cannot run the agent without OPENAI_API_KEY. See docs/02-how-to-execute.md.",
             events=bus.events,
             **maturity_fields(CURRENT_MATURITY_LEVEL),
         )

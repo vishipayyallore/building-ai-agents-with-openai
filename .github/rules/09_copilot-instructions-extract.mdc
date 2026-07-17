@@ -7,5 +7,5 @@ globs: *
 
 - Repository: `building-ai-agents-with-openai`
 - Stack: React + FastAPI + MCP
-- Key paths: `src/backend`, `src/frontend`, `src/mcp-server`, `sessions`, `docs`
+- Key paths: `src/backend`, `src/frontend`, `src/mcp-server`, `sessions`, `docs`, `tools`, `.github`
 - Keep docs executable and cross-references valid.

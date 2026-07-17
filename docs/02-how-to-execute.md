@@ -32,7 +32,8 @@ Edit `.env` and set at least:
 OPENAI_API_KEY=sk-...
 ```
 
-`OPENWEATHER_API_KEY` is optional.
+`OPENWEATHER_API_KEY` is optional. When set in `.env`, the backend loads it and
+passes it to the MCP weather tool; when unset, weather responses use demo data.
 
 ## 2. Install dependencies
 

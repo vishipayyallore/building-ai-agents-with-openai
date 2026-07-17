@@ -4,7 +4,7 @@ FastAPI app under `app/` — run from the **repository root** (single root `pypr
 
 ```powershell
 # From repo root
-uv sync
+uv sync --all-groups
 uv run uvicorn app.main:app --app-dir src/backend --reload --port 8000
 ```
 

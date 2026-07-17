@@ -1,22 +1,17 @@
 @{
-  RepoName = 'agentic-engineering-in-practice'
+  RepoName = 'building-ai-agents-with-openai'
 
   ExpectedFolders = @(
-    '.copilot'
-    '.cursor'
-    '.claude'
     'docs'
     'src'
     'src\frontend'
     'src\backend'
     'src\mcp-server'
     'sessions'
-    '_meta'
-    '_internal'
     'tools'
     'tools\psscripts'
+    'tools\pyscripts'
     '.github'
-    '.cursor\rules'
   )
 
   YamlCheckRoots = @(

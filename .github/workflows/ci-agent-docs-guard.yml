@@ -34,10 +34,20 @@ jobs:
           test -d .github/skills
           test -d .github/agents
           test -d .github/workflows
+          test -d .github/rules
+          test -d .github/prompts
+          test -f .github/prompts/task-prompt.md
 
       - name: Block stale cross-repo references
         run: |
-          ! grep -R -n -E "\.cursor/|CLAUDE\.md|\.clinerules|\.opencode" .github --exclude-dir=workflows || (echo "Found stale imported references" && exit 1)
+          # Scan .github including workflows; allowlist this step's own pattern string.
+          hits=$(grep -R -n -E "\.cursor/|CLAUDE\.md|\.clinerules|\.opencode" .github || true)
+          filtered=$(echo "$hits" | grep -v 'ci-agent-docs-guard.yml' | grep -v '^$' || true)
+          if [ -n "$filtered" ]; then
+            echo "Found stale imported references:"
+            echo "$filtered"
+            exit 1
+          fi
 
       - name: Lint markdown in .github
         uses: actions/setup-node@v4

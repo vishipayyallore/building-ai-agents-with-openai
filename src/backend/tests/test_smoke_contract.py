@@ -1,7 +1,8 @@
-"""HTTP smoke contract — mirrors tools/e2e-smoke.ps1 via ASGITransport.
+"""HTTP smoke contract via ASGITransport (no live OpenAI/MCP required).
 
-Default pytest runs exclude ``integration`` tests (no live OpenAI/MCP).
-The optional CI smoke job runs ``pytest -m integration`` when OPENAI_API_KEY is set.
+Default pytest runs exclude ``integration`` tests. Marked integration tests
+need ``OPENAI_API_KEY`` and are run locally when that env var is set — there is
+no separate CI smoke workflow for them yet.
 """
 
 import os

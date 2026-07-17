@@ -1,5 +1,5 @@
 [project]
-name = "agentic-engineering-in-practice"
+name = "building-ai-agents-with-openai"
 version = "0.1.0"
 description = "Agentic Engineering in Practice — hands-on evolving AI agent application (Demo 1+)"
 readme = "README.md"

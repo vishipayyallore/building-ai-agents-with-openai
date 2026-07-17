@@ -4,7 +4,7 @@
 
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue?style=flat-square)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square)](https://react.dev/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square)](https://react.dev/)
 [![OpenAI Agents SDK](https://img.shields.io/badge/OpenAI-Agents%20SDK-412991?style=flat-square)](https://openai.github.io/openai-agents-python/)
 [![MCP](https://img.shields.io/badge/MCP-FastMCP-orange?style=flat-square)](https://github.com/jlowin/fastmcp)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
@@ -51,7 +51,7 @@ cloud-native, multi-agent platform.
 
 | Session | Focus | Status | Guide/Tag |
 | ------- | ----- | :----: | --------- |
-| 1 | Build Your First AI Agent | ✅ Available | [sessions/session-01-build-your-first-agent/README.md](sessions/session-01-build-your-first-agent/README.md), `v1.0-build-your-first-agent` |
+| 1 | Build Your First AI Agent | ✅ Available | [sessions/session-01-build-your-first-agent/README.md](sessions/session-01-build-your-first-agent/README.md) (intended tag: `v1.0-build-your-first-agent`) |
 | 2 | Stateful Agents | 🚧 Next | Coming soon |
 | 3 | Multi-Provider Agents | 🚧 Planned | Coming soon |
 | 4 | Context Engineering | 🚧 Planned | Coming soon |
@@ -62,14 +62,16 @@ cloud-native, multi-agent platform.
 | 9 | Local Capstone | 🚧 Planned | Coming soon |
 | 10-15 | Platform and Enterprise Track | 🚧 Planned | Coming soon |
 
-Current tag for Session 1: `v1.0-build-your-first-agent`
+Session 1 is available on `main` and on the current development branch.
+Intended release tag (create when publishing): `v1.0-build-your-first-agent`
 
 ```bash
-git fetch --tags
-git checkout v1.0-build-your-first-agent
+git checkout main
+# After the release tag is published:
+# git fetch --tags && git checkout v1.0-build-your-first-agent
 ```
 
-`main` always tracks the latest stable release.
+`main` tracks the latest stable release.
 `swamy/16jul-work` is the active development branch.
 
 ---
@@ -126,7 +128,7 @@ flowchart LR
 
 ## 6. Stack
 
-- Frontend: React 18, TypeScript, Vite, Tailwind CSS
+- Frontend: React 19, TypeScript, Vite, Tailwind CSS
 - Backend: Python 3.13, FastAPI, Pydantic, OpenAI Agent SDK
 - Agent tools: Model Context Protocol (MCP), FastMCP
 - Tooling: uv, pytest
@@ -174,6 +176,7 @@ Full guide: [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
 
 ```text
 building-ai-agents-with-openai/
+├── .github/                     # Rules, skills, agents, workflows
 ├── docs/                        # Runbooks and supporting docs
 ├── sessions/                    # Published workshop guides
 │   └── session-01-build-your-first-agent/
@@ -181,6 +184,7 @@ building-ai-agents-with-openai/
 │   ├── backend/                 # FastAPI + Agents SDK runtime
 │   ├── frontend/                # React dashboard
 │   └── mcp-server/              # MCP tool server
+├── tools/                       # Helper scripts (not runtime)
 ├── .env.example
 ├── pyproject.toml
 └── README.md
@@ -194,14 +198,14 @@ Details: [docs/01-folder-structure.md](docs/01-folder-structure.md)
 
 If you are a learner:
 
-1. Check out the tag for your session.
+1. Use `main` (or the published session tag once it exists).
 2. Run the demo.
 3. Follow the guide in [sessions/](sessions/).
 
 If you are an instructor:
 
 1. Use this repo as your teaching product.
-2. Run from stable tags for reproducible demos.
+2. Prefer published tags for reproducible demos once tags are created.
 3. Use `swamy/16jul-work` for staging upcoming changes.
 
 ---

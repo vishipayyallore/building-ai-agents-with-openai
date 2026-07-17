@@ -28,7 +28,13 @@ Constraints:
 Validation:
 
 - Confirm documented commands run from stated directories.
-- Run markdown lint for changed docs.
+- Run markdown lint for changed docs:
+
+```powershell
+npx --yes markdownlint-cli2 "README.md" "docs/**/*.md" "sessions/**/*.md" ".github/**/*.md" "src/**/*.md"
+```
+
+(See `.github/skills/ci-checks/SKILL.md`.)
 
 Output:
 

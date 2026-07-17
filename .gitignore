@@ -422,6 +422,9 @@ FodyWeavers.xsd
 # Built Visual Studio Code Extensions
 *.vsix
 
+# Optional local staging for raw imports (never commit dumps)
+source-material/
+
 # Windows Installer files from build outputs
 *.cab
 *.msi

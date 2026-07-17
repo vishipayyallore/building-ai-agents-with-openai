@@ -6,10 +6,12 @@ globs: *
 # Repository Structure
 
 Primary paths:
-- `src/backend`
-- `src/frontend`
-- `src/mcp-server`
-- `sessions`
-- `docs`
+- `src/backend` — FastAPI + agent runtime
+- `src/frontend` — React workshop UI
+- `src/mcp-server` — MCP tools (spawned by backend)
+- `sessions/` — released session packages
+- `docs/` — operational documentation
+- `tools/` — helper scripts (not runtime)
+- `.github/` — rules, skills, agents, workflows, CI
 
 Do not introduce references to non-existent or cross-repo directory trees in this repository.

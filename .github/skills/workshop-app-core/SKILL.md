@@ -1,5 +1,5 @@
 ---
-name: ml-algorithms-from-scratch
+name: workshop-app-core
 description: Core repository context for the workshop app in building-ai-agents-with-openai (frontend, backend, MCP server, sessions, docs).
 ---
 
@@ -14,6 +14,8 @@ Use this skill when changes touch architecture, routes, runtime flow, or cross-s
 - `src/mcp-server`: MCP tool server used by backend via stdio
 - `sessions/`: released session content
 - `docs/`: operational and structure documentation
+- `tools/`: helper scripts (not runtime)
+- `.github/`: rules, skills, agents, workflows
 
 ## Runtime boundaries
 

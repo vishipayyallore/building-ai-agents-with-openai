@@ -8,6 +8,12 @@ This document describes the current folder layout for the teaching-product repos
 building-ai-agents-with-openai/
 |-- .env.example
 |-- .gitignore
+|-- .github/
+|   |-- agents/
+|   |-- rules/
+|   |-- skills/
+|   |-- prompts/
+|   `-- workflows/
 |-- .vscode/
 |   `-- settings.json
 |-- docs/
@@ -28,6 +34,14 @@ building-ai-agents-with-openai/
 |   |-- backend/
 |   |-- frontend/
 |   `-- mcp-server/
+|-- tools/
+|   |-- README.md
+|   |-- pyscripts/
+|   |   `-- README.md
+|   `-- psscripts/
+|       |-- README.md
+|       |-- RepoConfig.psd1
+|       `-- Export-FolderStructure.ps1
 `-- uv.lock
 ```
 
@@ -148,6 +162,8 @@ It does not duplicate application source code.
 
 - Frontend build output is intentionally ignored at `src/frontend/dist/`.
 - Use the root `README.md` as the primary run/setup guide.
+- `tools/` holds optional helper scripts; it is not part of the runtime app.
+- `.github/` holds rules, skills, agents, and CI workflows for this workshop repo.
 
 ## Related docs
 

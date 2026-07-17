@@ -1,5 +1,5 @@
 ---
-name: ml-zero-copy-review
+name: workshop-zero-copy-review
 description: Read-only check for copied or stale cross-repo content in docs and prompts.
 model: fast
 readonly: true
