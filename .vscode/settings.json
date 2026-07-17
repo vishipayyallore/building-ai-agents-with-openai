@@ -35,6 +35,26 @@
         "/^\\$root='d:/GitHub/building-ai-agents-with-openai'\n\n@'\n---\nname: Feature Request\nabout: Suggest a new capability for the workshop app or documentation\ntitle: \"\\[FEATURE\\] \"\nlabels: enhancement\nassignees: \"\"\n---\n\n## Problem Statement\n\nWhat problem are you trying to solve\\?\n\n## Proposed Solution\n\nDescribe the feature or enhancement\\.\n\n## Scope\n\n- \\[ \\] Backend \\(`src/backend`\\)\n- \\[ \\] Frontend \\(`src/frontend`\\)\n- \\[ \\] MCP server \\(`src/mcp-server`\\)\n- \\[ \\] Sessions \\(`sessions/`\\)\n- \\[ \\] Docs \\(`README\\.md`, `docs/`\\)\n- \\[ \\] CI / GitHub config \\(`\\.github/`\\)\n\n## Acceptance Criteria\n\nList clear, testable outcomes\\.\n\n## Additional Context\n\nInclude references, screenshots, examples, or related issues\\.\n'@ \\| Set-Content -Path \"\\$root/\\.github/ISSUE_TEMPLATE/feature_request\\.md\"\n\n@'\n---\nname: Documentation or Content Improvement\nabout: Propose improvements to README, docs, or session guidance\ntitle: \"\\[DOCS\\] \"\nlabels: documentation\nassignees: \"\"\n---\n\n## Current Content\n\nWhich file/section needs improvement\\?\n\n## Proposed Improvement\n\nWhat should change and why\\?\n\n## Improvement Type\n\n- \\[ \\] Accuracy/correction\n- \\[ \\] Clarity/readability\n- \\[ \\] Broken link/path fix\n- \\[ \\] Command/run instructions\n- \\[ \\] Session guide consistency\n- \\[ \\] Structure/navigation\n\n## Success Criteria\n\nHow will we know the update is complete\\?\n\n## Notes\n\nAny additional context or constraints\\.\n'@ \\| Set-Content -Path \"\\$root/\\.github/ISSUE_TEMPLATE/content_improvement\\.md\"\n$/": {
             "approve": true,
             "matchCommandLine": true
+        },
+        "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 \"README\\.md\" \"docs/\\*\\*/\\*\\.md\" \"sessions/\\*\\*/\\*\\.md\" \"\\.github/\\*\\*/\\*\\.md\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 \"README\\.md\" \"docs/\\*\\*/\\*\\.md\" \"sessions/\\*\\*/\\*\\.md\" \"src/\\*\\*/\\*\\.md\" \"\\.github/\\*\\*/\\*\\.md\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 \"README\\.md\" \"docs/\\*\\*/\\*\\.md\" \"sessions/\\*\\*/\\*\\.md\" \"\\.github/\\*\\*/\\*\\.md\" \"src/backend/\\*\\*/\\*\\.md\" \"src/mcp-server/\\*\\*/\\*\\.md\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd d:/GitHub/building-ai-agents-with-openai; if \\(Get-Command lychee -ErrorAction SilentlyContinue\\) \\{ lychee --config lychee\\.toml \"README\\.md\" \"docs/\\*\\*/\\*\\.md\" \"sessions/\\*\\*/\\*\\.md\" \"\\.github/\\*\\*/\\*\\.md\" \"src/backend/\\*\\*/\\*\\.md\" \"src/mcp-server/\\*\\*/\\*\\.md\" \\} elseif \\(Get-Command docker -ErrorAction SilentlyContinue\\) \\{ docker run --rm -v \"\\$\\{PWD\\}:/workspace\" -w /workspace lycheeverse/lychee:latest --config lychee\\.toml \"README\\.md\" \"docs/\\*\\*/\\*\\.md\" \"sessions/\\*\\*/\\*\\.md\" \"\\.github/\\*\\*/\\*\\.md\" \"src/backend/\\*\\*/\\*\\.md\" \"src/mcp-server/\\*\\*/\\*\\.md\" \\} else \\{ Write-Output \"LYCHEE_NOT_AVAILABLE\"; exit 2 \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 \"README\\.md\" \"docs/\\*\\*/\\*\\.md\" \"sessions/\\*\\*/\\*\\.md\" \"\\.github/\\*\\*/\\*\\.md\" \"src/backend/\\*\\*/\\*\\.md\" \"src/mcp-server/\\*\\*/\\*\\.md\" --no-globs$/": {
+            "approve": true,
+            "matchCommandLine": true
         }
     }
 }
