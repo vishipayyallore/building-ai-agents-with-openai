@@ -1,42 +1,24 @@
 ---
 name: e2e-testing
-description: Smoke verification for ML Algorithms from Scratch (environment, notebook JSON, optional manual notebook run). Use when smoke-testing the workspace end-to-end after notebook or learning-content changes.
+description: Smoke test end-to-end workshop behavior (backend up, frontend up, health endpoint, chat endpoints, MCP tool path).
 ---
 
-# Smoke / E2E-style verification — ML Algorithms from Scratch
+# E2E Smoke Testing
 
-No deployed application here. "End-to-end" means **environment + parse + optional notebook execution**.
+## Suggested flow
 
-## Prerequisites
+1. Start backend from repo root.
+2. Start frontend from `src/frontend`.
+3. Open `/demo/level-2`.
+4. Verify health endpoint returns ok.
+5. Run one direct LLM prompt and one MCP-tool prompt.
 
-- Python 3.12+ with **`uv`** at repo root
-- Optional: Jupyter — **Kernel → Restart & Run All**
+## Quick checks
 
-## Suggested sequence
+- `GET http://127.0.0.1:8000/health`
+- `POST /api/llm` works
+- `POST /api/chat` works and returns timeline events
 
-1. **Dependencies**
+## Expected outcome
 
-   ```powershell
-   $Env:UV_LINK_MODE = "copy"
-   uv sync
-   ```
-
-2. **Import smoke (optional)**
-
-   ```powershell
-   uv run python -c "import numpy, pandas, sklearn, scipy; print('ok')"
-   ```
-
-3. **Notebook JSON** (same as CI):
-
-   ```powershell
-   uv run python -c "import json,glob; paths=sorted(glob.glob('src/**/*.ipynb',recursive=True)); [json.load(open(p,encoding='utf-8')) for p in paths]"
-   ```
-
-4. **Manual (optional)** — open a representative notebook from `src/weekN/03-notebooks/`, run all cells.
-
-## Summary
-
-Report each step **PASS** / **FAIL** / **SKIPPED**.
-
-When the failure affects teaching flow, explain it in beginner-friendly language so the next fix is obvious.
+User can run the workshop demo locally with no undocumented steps.

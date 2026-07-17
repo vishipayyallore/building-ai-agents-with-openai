@@ -1,42 +1,10 @@
 ---
-description: Primary directives for Machine Learning Algorithms from Scratch
+description: Primary directives for agent edits
 globs: *
 ---
+
 # Primary Directives
 
-## Project Focus
-
-This is an **Academic Learning Workspace** for Machine Learning Algorithms that:
-- Implements ML algorithms from scratch in Python
-- Provides clear, structured notes in Markdown/LaTeX
-- Uses Jupyter Notebooks for interactive learning
-- Prioritizes algorithmic understanding and implementation
-
-### Educational Philosophy
-- **Educational first**: Prioritize clarity, correctness, and explainability over performance.
-- **Beginner friendly**: Default to beginner-friendly explanations before advanced phrasing.
-- **Business grounded**: When teaching a concept, try to connect it to a realistic business use case so the practical value is obvious.
-- **Layman explanation**: Use everyday language before formulas, ML jargon, or implementation detail.
-- **Equations**: Pair every display-math block with a plain-English line and a numeric walkthrough when helpful.
-- **Diagrams**: Use Mermaid diagrams with ASCII fallbacks wherever a visual explanation is applicable.
-- **From scratch mindset**: Implement algorithms from first principles; avoid heavy abstractions.
-- **Document intent**: Update docs when structure, behavior, or learning flow changes.
-
-## Current State
-
-- ✅ Active Learning: Ongoing course (M.Sc. DSAI)
-- ✅ Tech Stack: Python, Jupyter, NumPy, Pandas, Matplotlib, Seaborn, scikit-learn (for comparison)
-- ❌ NOT a Web Application: No Flask, Django, or React.
-- ❌ NOT a Production System: Code is for educational and practice purposes.
-
-## Documentation Accuracy
-
-- Notes must accurately reflect algorithm theory.
-- Formulas must be correctly formatted in LaTeX.
-- Code comments should explain the *why* of the algorithm step, not just the *how* of the Python code.
-
-## Code Maintenance
-
-- Notebooks should be reproducible (Restart Kernel & Run All should work).
-- Separate reusable logic into `src/` modules where appropriate.
-- Use strict typing in Python scripts (`src/`) but relax it in Notebooks for exploration.
+- Prefer minimal, targeted changes.
+- Preserve working behavior unless change request requires behavior updates.
+- Keep documentation aligned with code and commands.

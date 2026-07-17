@@ -1,36 +1,20 @@
 ---
 name: docs-verification
-description: Verify markdown structure, four-layer week companions, folder naming, beginner-friendly explanations, and business-use-case grounding. Use when auditing docs, broken links, or cross-layer consistency.
+description: Verify documentation correctness for paths, commands, links, API references, and consistency with actual repository behavior.
 ---
 
-# Documentation Verification — ML Algorithms from Scratch
+# Docs Verification
 
-**Four-layer** companions are organized by week under `src/weekN/` with four subfolders: `01-notes/`, `02-quizzes/`, `03-notebooks/`, `04-discussions/`.
+## What to verify
 
-## Verification matrix
+1. Links resolve to existing files.
+2. Commands run from the documented working directory.
+3. API route references match backend implementation.
+4. Version references match `pyproject.toml` and `package.json` reality.
+5. Folder trees in docs reflect current repository structure.
 
-| Concern | Source of truth | Common errors |
-|--------|-----------------|---------------|
-| Layout | `docs/01_repository-structure.md`, `README.md` | Missing layer for a week; wrong subfolder name |
-| Notes | `src/weekN/01-notes/` | Instructor tone; concepts without layman intuition before math; missing business use case where helpful |
-| Quizzes | `src/weekN/02-quizzes/` | Marked answers inconsistent with explanations; copied institution questions; bare `**Correct answer**:` without `<details>` rationales on active quizzes |
-| Notebooks | `src/weekN/03-notebooks/` | Missing `-implementation` suffix; broken JSON; hidden cell state |
-| Discussions | `src/weekN/04-discussions/` | Copied institution scenarios; missing original synthesis |
-| Reusable code | `src/` (alongside week folders) | Algorithm logic duplicated in notebooks without clear separation |
-| Public docs | `.cursor/rules/07_source_material_rules.mdc` | Listing `source-material/` in `README.md`, `docs/**/*.md`, or structure diagrams |
-| Diagrams | `.cursor/rules/02_educational-content-rules.mdc` | Mermaid diagram missing an ASCII fallback where a visual explanation is applicable |
-| Week folders | `src/week1/`, `src/week2/`, … | Wrong casing (`Week1` instead of `week1`); content in wrong week |
-| Topic numbering | `src/weekN/*/` | `00-` / `00_` prefix; topic index out of sync with filesystem; assuming same `NN` across layers when index differs |
+## Common drift checks
 
-## Archive handling
-
-- `.archive/` was retired; optional post-term bundles are under `src/beyond-term/`.
-- `source-material/.archive/` (if present) is preserved raw/reference material; keep it internal-only and read-only.
-- Do not require archive content to appear in `src/weekN/` during ordinary documentation audits.
-
-## Output format
-
-Use a table: **File | Status | Issues**. Concrete paths only; offer fixes when requested.
-
-When noting teaching issues, explain them in beginner-friendly terms and mention when a missing business use case weakens the real-world explanation.
-When noting diagram issues, mention whether a Mermaid diagram needs an ASCII fallback for environments that do not render Mermaid.
+- `npm run dev` must be shown from `src/frontend`.
+- Backend launch should use `uv run uvicorn app.main:app --app-dir src/backend`.
+- Avoid references to non-existent `docs/` pages from other repos.

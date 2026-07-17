@@ -1,86 +1,34 @@
 # Pull Request
 
-## Description
+## Summary
 
-A clear and concise description of what this PR does.
+What changed and why?
 
-## Type of Change
+## Change Type
 
-- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
-- [ ] ✨ New feature (non-breaking change which adds functionality)
-- [ ] 📝 Documentation update
-- [ ] 🔧 Content improvement
-- [ ] 🎨 Formatting/styling (no content change)
-- [ ] ♻️ Refactoring (no functional change)
-- [ ] ⚡ Performance improvement
-- [ ] 🧪 Test addition/update
-- [ ] 🔨 Build/CI changes
-- [ ] 🗑️ Content removal
+- [ ] Bug fix
+- [ ] Feature
+- [ ] Documentation update
+- [ ] Refactor
+- [ ] Test update
+- [ ] CI/workflow update
 
-## Content Type
+## Areas Affected
 
-- [ ] Week Notes (`src/weekN/01-notes/`)
-- [ ] Week Quiz (`src/weekN/02-quizzes/`)
-- [ ] Jupyter Notebook (`src/weekN/03-notebooks/`)
-- [ ] Week Discussion (`src/weekN/04-discussions/`)
-- [ ] Python Script (`src/`)
-- [ ] Documentation (`README.md`, etc.)
-- [ ] Configuration (`.github/`, `.cursor/`, etc.)
+- [ ] Backend (`src/backend`)
+- [ ] Frontend (`src/frontend`)
+- [ ] MCP server (`src/mcp-server`)
+- [ ] Sessions (`sessions/`)
+- [ ] Docs (`README.md`, `docs/`)
+- [ ] GitHub config (`.github/`)
 
-## Changes Made
+## Validation
 
-### Files Changed
+- [ ] `uv run pytest -q`
+- [ ] `uv run ruff check src/backend src/mcp-server`
+- [ ] Frontend checks (`npm run lint`, `npm test`, `npm run build` in `src/frontend`)
+- [ ] Docs/links reviewed where relevant
 
-- `path/to/file1.md`
-- `path/to/file2.ipynb`
+## Notes
 
-### Summary
-
-Brief summary of what was changed and why.
-
-## Checklist
-
-### Pre-Submission
-
-- [ ] I have reviewed the repository contribution expectations (see repository docs)
-- [ ] I have reviewed the repository conduct expectations (see repository docs)
-- [ ] My changes follow the repository's [content rules](../.cursor/rules/02_educational-content-rules.mdc)
-- [ ] I have checked for broken file references
-- [ ] I have verified YAML frontmatter (if applicable)
-- [ ] Code follows project standards (PEP 8 for Python)
-- [ ] I have verified file naming conventions
-- [ ] I have run markdownlint (if applicable)
-- [ ] I have tested my changes locally
-
-### Content Quality
-
-- [ ] Content is original and transformative (zero-copy policy)
-- [ ] Examples and diagrams are original
-- [ ] Algorithm implementations are from scratch
-- [ ] Cross-references are updated
-- [ ] Documentation is updated (if structure changed)
-
-### Code/Technical (if applicable)
-
-- [ ] Code follows repository standards
-- [ ] Code is tested (if applicable)
-- [ ] No secrets or sensitive data included
-- [ ] Dependencies are documented
-- [ ] Algorithm implemented from scratch (not using sklearn directly)
-
-## Related Issues
-
-Closes #(issue number)
-Related to #(issue number)
-
-## Screenshots/Examples (if applicable)
-
-Add screenshots, diagrams, or examples to help reviewers understand your changes.
-
-## Additional Notes
-
-Any additional information, context, or notes for reviewers.
-
----
-
-**Note**: This repository is Swamy PKV's personal Machine Learning study workspace. Keep changes aligned with the current week-based four-layer structure.
+Any reviewer context or follow-up items.

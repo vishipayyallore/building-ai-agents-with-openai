@@ -1,4 +1,4 @@
-name: Python CI (ML Algorithms from Scratch)
+name: Python CI (Backend + MCP)
 
 on:
   push:
@@ -7,32 +7,26 @@ on:
     branches: [main, master, 'swamy/**']
 
 jobs:
-  build:
+  backend-mcp:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Install uv
-      uses: astral-sh/setup-uv@v4
-      with:
-        version: "latest"
-    - name: Set up Python 3.12
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.12"
-    - name: Install dependencies with uv
-      run: |
-        uv sync
-    - name: Lint with ruff
-      run: uv run ruff check src/ tests/
-    - name: Run pytest
-      run: uv run pytest -q
-    - name: Check notebook syntax (basic)
-      run: |
-        uv run python << 'PYTHON_SCRIPT'
-        import json
-        import glob
-        for notebook in glob.glob('src/**/*.ipynb', recursive=True):
-            with open(notebook, 'r', encoding='utf-8') as f:
-                json.load(f)
-        PYTHON_SCRIPT
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: latest
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Ruff lint (backend + MCP)
+        run: uv run ruff check src/backend src/mcp-server
+
+      - name: Run pytest
+        run: uv run pytest -q

@@ -1,53 +1,37 @@
 ---
 name: Bug Report
-about: Report a bug or error in the repository
-title: '[BUG] '
+about: Report a bug in the workshop app, docs, or tooling
+title: "[BUG] "
 labels: bug
-assignees: ''
+assignees: ""
 ---
 
 ## Description
 
-A clear and concise description of what the bug is.
+Describe the issue clearly.
 
-## Location
+## Area
 
-**File(s) affected**:
-
-- `path/to/file.md` or `path/to/file.ipynb`
-
-**Section(s) affected**:
-
-- Section name or line numbers
+- [ ] Backend (`src/backend`)
+- [ ] Frontend (`src/frontend`)
+- [ ] MCP server (`src/mcp-server`)
+- [ ] Docs (`README.md`, `docs/`, `sessions/`)
+- [ ] CI / workflows (`.github/workflows`)
 
 ## Steps to Reproduce
 
-1. Open Notebook '...'
-2. Run cell number '...'
-3. See error
+1.
+2.
+3.
 
 ## Expected Behavior
 
-A clear and concise description of what you expected to happen.
+What should happen?
 
 ## Actual Behavior
 
-A clear and concise description of what actually happened.
-
-## Screenshots
-
-If applicable, add screenshots to help explain your problem.
+What happened instead?
 
 ## Additional Context
 
-- **Component**: [Notebook / Reading Notes / Python Script / Documentation / Other]
-- **Severity**: [Low / Medium / High]
-- **Impact**: How does this affect the learning experience?
-
-## Proposed Fix (Optional)
-
-If you have a suggestion for how to fix this, please describe it here.
-
----
-
-**Note**: This repository is for Machine Learning Algorithms from Scratch. Bug reports help improve the learning experience for everyone.
+Include logs, screenshots, request/response samples, or failing commands.

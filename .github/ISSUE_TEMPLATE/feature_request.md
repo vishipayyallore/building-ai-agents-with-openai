@@ -1,72 +1,32 @@
 ---
 name: Feature Request
-about: Suggest a new feature or enhancement
-title: '[FEATURE] '
+about: Suggest a new capability for the workshop app or documentation
+title: "[FEATURE] "
 labels: enhancement
-assignees: ''
+assignees: ""
 ---
 
-## Description
+## Problem Statement
 
-A clear description of the feature you'd like to see added.
+What problem are you trying to solve?
 
-## Feature Type
+## Proposed Solution
 
-- [ ] New Algorithm Implementation
-- [ ] New Notebook (Algorithm explanation/Practice)
-- [ ] New Python Module (`src/`)
-- [ ] Visualization Improvement
-- [ ] Documentation Improvement
-- [ ] Other (please describe)
+Describe the feature or enhancement.
 
-## Motivation
+## Scope
 
-Why is this feature valuable?
+- [ ] Backend (`src/backend`)
+- [ ] Frontend (`src/frontend`)
+- [ ] MCP server (`src/mcp-server`)
+- [ ] Sessions (`sessions/`)
+- [ ] Docs (`README.md`, `docs/`)
+- [ ] CI / GitHub config (`.github/`)
 
-- What problem does it solve?
-- How does it improve the study workflow?
-- What future week or revision task would it support?
+## Acceptance Criteria
 
-## Detailed Description
-
-### If it's a new algorithm
-
-- What algorithm should be implemented?
-- What are the key mathematical concepts?
-- What datasets would be suitable for demonstration?
-
-### If it's a visualization improvement
-
-- What should be visualized?
-- What type of plot would be most effective?
-- How does it help understand the algorithm?
-
-### If it's a documentation improvement
-
-- What documentation is missing or unclear?
-- What format would be most helpful?
-
-## Proposed Location
-
-Where should this feature be implemented?
-
-- `src/weekN/01-notes/<topic>.md`
-- `src/weekN/02-quizzes/<topic>-quiz.md`
-- `src/weekN/03-notebooks/<topic>-implementation.ipynb`
-- `src/weekN/04-discussions/<topic>-discussion.md`
-- `src/algorithm_name.py`
-- Specific file or folder
-
-## Related Content
-
-- Does this relate to existing algorithms?
-- What dependencies are needed?
-- What does this enable?
+List clear, testable outcomes.
 
 ## Additional Context
 
-Any other information, examples, or references that would help.
-
----
-
-**Note**: This repository is Swamy PKV's personal Machine Learning study workspace. Feature requests should align with the current week-based four-layer structure.
+Include references, screenshots, examples, or related issues.

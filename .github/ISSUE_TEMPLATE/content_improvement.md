@@ -1,46 +1,32 @@
 ---
-name: Content Improvement
-about: Suggest improvements to existing content
-title: '[CONTENT] '
+name: Documentation or Content Improvement
+about: Propose improvements to README, docs, or session guidance
+title: "[DOCS] "
 labels: documentation
-assignees: ''
+assignees: ""
 ---
-
-## Description
-
-A clear description of the content improvement you'd like to see.
-
-## Content Type
-
-- [ ] Week Notes (`src/weekN/01-notes/`)
-- [ ] Week Quiz (`src/weekN/02-quizzes/`)
-- [ ] Notebook (`src/weekN/03-notebooks/`)
-- [ ] Week Discussion (`src/weekN/04-discussions/`)
-- [ ] Documentation (`docs/`, `README.md`)
-- [ ] Code Comments
 
 ## Current Content
 
-**File**: `path/to/file.md` or `path/to/file.ipynb`
+Which file/section needs improvement?
 
-**Section**: (if applicable)
+## Proposed Improvement
 
-## Suggested Improvement
+What should change and why?
 
-Describe what should be improved and how.
+## Improvement Type
 
-## Motivation
+- [ ] Accuracy/correction
+- [ ] Clarity/readability
+- [ ] Broken link/path fix
+- [ ] Command/run instructions
+- [ ] Session guide consistency
+- [ ] Structure/navigation
 
-Why is this improvement valuable?
+## Success Criteria
 
-- What confusion does it address?
-- How does it improve understanding?
-- What learning objective does it support?
+How will we know the update is complete?
 
-## Additional Context
+## Notes
 
-Any other information, examples, or references that would help.
-
----
-
-**Note**: This repository is Swamy PKV's personal Machine Learning study workspace. Suggestions should match the current week-based four-layer structure.
+Any additional context or constraints.

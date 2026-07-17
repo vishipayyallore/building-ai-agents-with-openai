@@ -1,48 +1,28 @@
 ---
-name: t2-machine-learning
-description: Work on t2-machine-learning — week folders under src/, four-layer companions (01-notes, 02-quizzes, 03-notebooks, 04-discussions), from-scratch implementations, zero-copy, beginner-friendly explanations, and realistic business use cases.
+name: ml-algorithms-from-scratch
+description: Core repository context for the workshop app in building-ai-agents-with-openai (frontend, backend, MCP server, sessions, docs).
 ---
 
-# Machine Learning Algorithms from Scratch
+# Workshop App Core Context
 
-**Scope:** Swamy PKV's personal learning only. See `README.md` and `.cursor/rules/01_swamy_personal_learning_only.mdc`.
+Use this skill when changes touch architecture, routes, runtime flow, or cross-service behavior.
 
-## Layout
+## Repository map
 
-Content is organized by **week** under `src/weekN/`. Each week has four companion subfolders:
+- `src/frontend`: React UI (Home, Level 1, Level 2 pages)
+- `src/backend`: FastAPI API + agent runtime orchestration
+- `src/mcp-server`: MCP tool server used by backend via stdio
+- `sessions/`: released session content
+- `docs/`: operational and structure documentation
 
-| Layer | Path |
-|-------|------|
-| Notes | `src/weekN/01-notes/` |
-| Quizzes | `src/weekN/02-quizzes/` |
-| Notebooks | `src/weekN/03-notebooks/` |
-| Discussions | `src/weekN/04-discussions/` |
+## Runtime boundaries
 
-Shared reusable logic lives in `src/` alongside the week folders.
+- `POST /api/llm`: direct LLM path (Level 1)
+- `POST /api/chat`: agent runtime + MCP tools (Level 2)
+- `GET /health`: health contract
 
-## Topic-block numbering
+## Expected outcomes
 
-- **Term map:** `src/course-roadmap-and-module-overview.md` — no `NN-` prefix.
-- **`01-notes/`:** continuous `01`–`NN` in read order; `01-` = week introduction.
-- **`02-quizzes/`:** `01`–`NN` by curriculum topic index.
-- **`03-notebooks/` / `04-discussions/`:** continuous `01`–`NN` within each layer.
-- **Cross-layer map:** topic index in each week's `01-introduction-*.md` note.
-- **Never** `00-` / `00_` on learning files. Full rules: `.cursor/rules/08_file-naming-conventions.mdc`.
-
-## Topic theme
-
-Machine learning fundamentals from first principles: workflow and KDD/CRISP-DM; supervised and unsupervised paradigms; data preprocessing; classification and evaluation; overfitting and underfitting. Core algorithm logic is implemented from scratch in notebooks; scikit-learn is allowed only for dataset loading, baselines, or workflow foundations where the learning goal is not the core learning rule.
-
-## Teaching quality
-
-- Explain concepts in beginner-friendly language before using formal ML terms.
-- Add layman explanations for important ideas, formulas, and workflow choices.
-- Use realistic business use cases whenever practical so the concept is tied to a real application.
-- Pair display equations with plain-English intuition and a numeric walkthrough when the topic is quantitative.
-- Include a Mermaid diagram with an ASCII fallback wherever a process, flow, relationship, or architecture is easier to understand visually.
-
-## Related
-
-- **Topic SOP:** `.github/skills/topic-companions/SKILL.md`
-- **CI commands:** `.github/skills/ci-checks/SKILL.md`
-- **Subagent:** `.cursor/agents/ml-topic-bundle-review.md`
+- Keep frontend/backend contracts consistent.
+- Keep docs runnable against current commands.
+- Preserve testability and clear workshop behavior.

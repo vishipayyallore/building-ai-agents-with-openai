@@ -1,40 +1,25 @@
 # Agent skills (canonical)
 
-This directory is the **source of truth** for bundled agent skills used with Cursor and GitHub Copilot (see `.github/copilot-instructions.md`).
+This folder contains repository-specific skills for `building-ai-agents-with-openai`.
 
-## Mirror
+## Scope
 
-`.cursor/skills/` must stay **identical** to `.github/skills/` (same paths, same `SKILL.md` and `README.md` bytes). After editing here, copy the updated tree to `.cursor/skills/`.
+Skills here should target this workshop app and its real structure:
+- `src/backend`
+- `src/frontend`
+- `src/mcp-server`
+- `sessions/`
+- `docs/`
 
-### Verify parity (PowerShell, repo root)
-
-```powershell
-$gRoot = Join-Path (Get-Location) ".github\skills"
-$cRoot = Join-Path (Get-Location) ".cursor\skills"
-Get-ChildItem $gRoot -Recurse -Filter SKILL.md | ForEach-Object {
- $rel = $_.FullName.Substring($gRoot.Length + 1)
- $c = Join-Path $cRoot $rel
- if (-not (Test-Path $c)) { Write-Host "Missing in .cursor/skills: $rel"; return }
- if ((Get-FileHash $_.FullName -Algorithm SHA256).Hash -ne (Get-FileHash $c -Algorithm SHA256).Hash) {
- Write-Host "MISMATCH: $rel"
- }
-}
-Get-ChildItem $cRoot -Recurse -Filter SKILL.md | ForEach-Object {
- $rel = $_.FullName.Substring($cRoot.Length + 1)
- $g = Join-Path $gRoot $rel
- if (-not (Test-Path $g)) { Write-Host "Extra in .cursor/skills (not in .github): $rel" }
-}
-```
-
-## Bundled skills
+## Included skills
 
 | Folder | Purpose |
 |--------|---------|
-| `ml-algorithms-from-scratch` | Domain context for this repository (frontmatter skill name: `t2-machine-learning`) |
-| `topic-companions` | Four-layer topic SOP, parity, definition of done |
-| `ci-checks` | Local commands aligned with `.github/workflows/ci-*.yml` |
-| `docs-verification` | Markdown / four-layer bundle checks vs `docs/01_repository-structure.md` |
-| `workspace-review` | Full audit checklist for this educational repo |
-| `e2e-testing` | Smoke checks (env, notebook parse, optional manual run) |
+| `ml-algorithms-from-scratch` | Core repository context and architecture guidance |
+| `ci-checks` | CI-aligned local checks for backend/frontend/docs |
+| `docs-verification` | Validate docs, links, commands, and path accuracy |
+| `e2e-testing` | Smoke path for backend + frontend + MCP behavior |
+| `topic-companions` | Session companion consistency checks |
+| `workspace-review` | Full workspace correctness audit |
 
-**CI:** Pushes that touch skills run `.github/workflows/ci-skills-parity.yml`; agent docs changes also run `.github/workflows/ci-agent-docs-guard.yml`.
+When updating a skill, keep examples and commands aligned with current repository paths.
