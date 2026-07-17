@@ -1,26 +1,80 @@
-# Building AI Agents with OpenAI
+# Building AI Agents with OpenAI - Swamy's Tech Skills Academy
 
-![Program](https://img.shields.io/badge/M.Sc-Data%20Science%20%26%20AI-8ecae6)
-![Status](https://img.shields.io/badge/Status-Active-b7e4c7)
-![Python](https://img.shields.io/badge/Python-3.13-a0c4ff)
-![Jupyter](https://img.shields.io/badge/Jupyter-Active-ffd6a5)
-![Focus](https://img.shields.io/badge/Focus-Foundations%20%26%20Algorithms-cdb4db)
-![Track](https://img.shields.io/badge/Track-AI%20Agents-90e0ef)
-![Workshop](https://img.shields.io/badge/Workshop-Live%20Sessions-ffadad)
-![Level](https://img.shields.io/badge/Level-Beginner%20to%20Advanced-d8f3dc)
+> One repo. One evolving app. Fifteen sessions from first agent to enterprise.
 
-One repo. One evolving app. Fifteen sessions from first agent to enterprise operations.
+[![Python 3.13](https://img.shields.io/badge/Python-3.13-blue?style=flat-square)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square)](https://react.dev/)
+[![OpenAI Agents SDK](https://img.shields.io/badge/OpenAI-Agents%20SDK-412991?style=flat-square)](https://openai.github.io/openai-agents-python/)
+[![MCP](https://img.shields.io/badge/MCP-FastMCP-orange?style=flat-square)](https://github.com/jlowin/fastmcp)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
 This is the hands-on workshop repository for **Swamy's Tech Skills Academy**.
-You build one product end-to-end with React + FastAPI + OpenAI Agent SDK + MCP,
-then level it up session by session.
+You do not build fifteen toy apps. You evolve one production-grade app built
+with React + FastAPI + OpenAI Agent SDK + MCP across live sessions.
 
-Use this as the **Teaching Product**: clone it, run the demo, and follow the
-published session guides.
+Use it to learn, teach, and ship.
+
+> You are on active development branch `swamy/16jul-work`.
+> Stable releases are tracked on `main` and by version tags.
 
 ---
 
-## 1. Learning journey
+## 1. Live Demo (Current Session)
+
+- Backend health: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+- Frontend dashboard: [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
+
+Full run guide: [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
+
+---
+
+## 2. Why this repo
+
+Most AI tutorials stop at a notebook. Enterprises need reliable,
+evaluatable, and deployable systems.
+
+You will master the five pillars of enterprise AI in one codebase:
+
+1. LLMs: the intelligence layer
+2. Generative AI: the creation layer
+3. RAG: the reliability layer
+4. AI Agents: the execution layer
+5. Agentic AI: the autonomy layer
+
+Each session adds one pillar in code. By Session 15, you have a
+cloud-native, multi-agent platform.
+
+---
+
+## 3. Session roadmap and tags
+
+| Session | Focus | Status | Guide/Tag |
+| ------- | ----- | :----: | --------- |
+| 1 | Build Your First AI Agent | ✅ Available | [sessions/session-01-build-your-first-agent/README.md](sessions/session-01-build-your-first-agent/README.md), `v1.0-build-your-first-agent` |
+| 2 | Stateful Agents | 🚧 Next | Coming soon |
+| 3 | Multi-Provider Agents | 🚧 Planned | Coming soon |
+| 4 | Context Engineering | 🚧 Planned | Coming soon |
+| 5 | Knowledge-Driven Agents | 🚧 Planned | Coming soon |
+| 6 | Multi-Agent Engineering | 🚧 Planned | Coming soon |
+| 7 | Production Foundations | 🚧 Planned | Coming soon |
+| 8 | Evaluation and Guardrails | 🚧 Planned | Coming soon |
+| 9 | Local Capstone | 🚧 Planned | Coming soon |
+| 10-15 | Platform and Enterprise Track | 🚧 Planned | Coming soon |
+
+Current tag for Session 1: `v1.0-build-your-first-agent`
+
+```bash
+git fetch --tags
+git checkout v1.0-build-your-first-agent
+```
+
+`main` always tracks the latest stable release.
+`swamy/16jul-work` is the active development branch.
+
+---
+
+## 4. Learning journey
 
 ```mermaid
 flowchart TB
@@ -50,65 +104,58 @@ flowchart TB
     class S10,S11,S12,S13,S14,S15 phase2;
 ```
 
-## 2. Learning promise
-
-By following this repository, you will learn how to:
-
-- Design and run a production-style AI agent workflow.
-- Build with React, FastAPI, OpenAI Agent SDK, and MCP tools.
-- Progress from local demos to cloud-native and enterprise patterns.
-
 ---
 
-## 3. The 5 pillars
+## 5. Architecture
 
-This workshop aligns to a full modern AI delivery stack:
+```mermaid
+flowchart LR
+    UI[React Dashboard\nVite + Tailwind]
+    API[FastAPI\nPython 3.13]
+    AGENT[OpenAI Agent SDK]
+    TOOLS[Tools\nMCP / FastMCP]
+    RAG[(Vector DB\nFuture Sessions)]
+    MODELS[LLMs\nOpenAI, Gemini, Local]
 
-1. LLM foundation and prompting: model behavior, tool use, and reliability.
-2. GenAI application patterns: UX, API orchestration, and observability.
-3. RAG and knowledge workflows: retrieval strategy and grounded responses.
-4. Agent systems: state, tools, planning, and multi-agent composition.
-5. Agentic AI in production: guardrails, evaluation, and operations.
-
----
-
-## 4. Session roadmap and tags
-
-| Session | Theme | Status | Release tag |
-| ------- | ----- | :----: | ----------- |
-| 1 | Build Your First AI Agent | ✅ Available | `v1.0-build-your-first-agent` |
-| 2 | Stateful Agents | 🚧 Coming Soon | - |
-| 3 | Multi-Provider Agents | 🚧 Coming Soon | - |
-| 4 | Context Engineering | 🚧 Coming Soon | - |
-| 5 | Knowledge-Driven Agents | 🚧 Coming Soon | - |
-| 6 | Multi-Agent Engineering | 🚧 Coming Soon | - |
-| 7 | Production Foundations | 🚧 Coming Soon | - |
-| 8 | Evaluation and Guardrails | 🚧 Coming Soon | - |
-| 9 | Local Capstone | 🚧 Coming Soon | - |
-| 10-15 | Platform and Enterprise Track | 🚧 Coming Soon | - |
-
-Current working branch: `swamy/16jul-work` (WIP)
-
-Quick checkout for Session 1:
-
-```bash
-git fetch --tags
-git checkout v1.0-build-your-first-agent
+    UI --> API --> AGENT --> TOOLS
+    AGENT --> RAG
+    AGENT --> MODELS
 ```
 
 ---
 
-## 5. 3 minute quick start
+## 6. Stack
 
-From repository root:
+- Frontend: React 18, TypeScript, Vite, Tailwind CSS
+- Backend: Python 3.13, FastAPI, Pydantic, OpenAI Agent SDK
+- Agent tools: Model Context Protocol (MCP), FastMCP
+- Tooling: uv, pytest
+
+---
+
+## 7. Quick start (3 minutes to first agent)
+
+### Prerequisites
+
+- Python 3.13+ and `uv`
+- Node.js 20+
+- OpenAI API key
+
+### 1) Setup
 
 ```powershell
 uv sync --all-groups
 Copy-Item .env.example .env
+# Add OPENAI_API_KEY to .env
+```
+
+### 2) Run backend
+
+```powershell
 uv run uvicorn app.main:app --app-dir src/backend --reload --port 8000
 ```
 
-In a second terminal:
+### 3) Run frontend
 
 ```powershell
 cd src/frontend
@@ -116,99 +163,50 @@ npm install
 npm run dev
 ```
 
-Open:
+Open [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
+and validate [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health).
 
-- App: [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
-- Health: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
-
----
-
-## 6. Architecture at a glance
-
-```mermaid
-flowchart LR
-    UI[React Frontend\nsrc/frontend]
-    API[FastAPI Backend\nsrc/backend]
-    AGENT[Agent Runtime\nOpenAI Agent SDK]
-    MCP[MCP Tool Server\nsrc/mcp-server]
-    DATA[(Knowledge and RAG\nFuture Sessions)]
-
-    UI --> API
-    API --> AGENT
-    AGENT --> MCP
-    AGENT --> DATA
-```
+Full guide: [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
 
 ---
 
-## 7. Session 1 - Build Your First AI Agent
-
-**Tag:** `v1.0-build-your-first-agent`
-
-Guide: [sessions/session-01-build-your-first-agent/README.md](sessions/session-01-build-your-first-agent/README.md)
-
----
-
-## 8. Docs
-
-- [docs/01-folder-structure.md](docs/01-folder-structure.md)
-- [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
-
----
-
-## 9. What's in this repo
+## 8. Project structure
 
 ```text
 building-ai-agents-with-openai/
-├── README.md          ← product homepage (this file)
-├── docs/              # Supporting repository docs
-├── src/               # Latest released application
-├── sessions/          # Released session guides only
-├── LICENSE
+├── docs/                        # Runbooks and supporting docs
+├── sessions/                    # Published workshop guides
+│   └── session-01-build-your-first-agent/
+├── src/
+│   ├── backend/                 # FastAPI + Agents SDK runtime
+│   ├── frontend/                # React dashboard
+│   └── mcp-server/              # MCP tool server
 ├── .env.example
 ├── pyproject.toml
-└── uv.lock
+└── README.md
 ```
 
----
-
-## 10. How to run today's demo
-
-Use the full execution guide:
-
-- [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
-
-Quick links:
-
-- Level 2 dashboard: [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
-- Health check: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+Details: [docs/01-folder-structure.md](docs/01-folder-structure.md)
 
 ---
 
-## 11. Stack
+## 9. How to use this repo
 
-- **Frontend:** React, TypeScript, Vite, Tailwind CSS
-- **Backend:** Python 3.13, FastAPI, OpenAI Agent SDK, Pydantic
-- **Tools:** Model Context Protocol (MCP), FastMCP
+If you are a learner:
 
----
+1. Check out the tag for your session.
+2. Run the demo.
+3. Follow the guide in [sessions/](sessions/).
 
-## 12. How to use this repository
+If you are an instructor:
 
-For learners:
-
-1. Start with [sessions/session-01-build-your-first-agent/README.md](sessions/session-01-build-your-first-agent/README.md).
-2. Run the app locally and observe each maturity level.
-3. Move session by session as release tags are published.
-
-For instructors:
-
-1. Use this repository as a teaching product for live demos.
-2. Keep examples and run commands tied to the released tag.
-3. Use `swamy/16jul-work` to stage upcoming updates.
+1. Use this repo as your teaching product.
+2. Run from stable tags for reproducible demos.
+3. Use `swamy/16jul-work` for staging upcoming changes.
 
 ---
 
-## 13. License
+## 10. Docs and license
 
-MIT — see [LICENSE](LICENSE).
+- Docs: [docs/01-folder-structure.md](docs/01-folder-structure.md), [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
+- License: MIT, see [LICENSE](LICENSE)

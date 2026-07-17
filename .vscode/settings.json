@@ -67,6 +67,10 @@
         "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 --no-globs README_NEW\\.md$/": {
             "approve": true,
             "matchCommandLine": true
+        },
+        "/^cd d:/GitHub/building-ai-agents-with-openai; npx --yes markdownlint-cli2 --no-globs README\\.md$/": {
+            "approve": true,
+            "matchCommandLine": true
         }
     }
 }
