@@ -1,0 +1,177 @@
+---
+description: Key guidelines extracted from copilot-instructions.md for AI assistants
+globs: *
+---
+# Copilot Instructions Extract
+
+**Source**: `.github/copilot-instructions.md` from this repository
+**Purpose**: Key guidelines for AI assistants working on this repository
+
+---
+
+## 🎯 Repository Context
+
+**Machine Learning Algorithms from Scratch** is an academic workspace dedicated to implementing ML algorithms from first principles. It contains structured notes, examples, and implementations for the M.Sc. DSAI program.
+
+### Intended use
+
+- Swamy PKV's personal M.Sc. Data Science & AI learning
+- Private revision, practice, and from-scratch implementation notes for Swamy only
+
+### Four-Layer Learning Architecture
+
+Content is organized by **week** under `src/`. For each week, maintain four companion subfolders:
+
+1. **Notes**: `src/weekN/01-notes/` — Theory, first-person learning journey
+2. **Quizzes**: `src/weekN/02-quizzes/` — Self-assessment (original synthesis only)
+3. **Notebooks**: `src/weekN/03-notebooks/` — From-scratch implementations
+4. **Discussions**: `src/weekN/04-discussions/` — Worked examples and discussion scenarios
+
+**Week folder naming:** lowercase `weekN` (e.g. `week1`, `week2`).
+
+**Topic-block file naming:** layer-aware prefixes `01`–`99` (never `00-` / `00_`); term map at `src/course-roadmap-and-module-overview.md`; cross-layer map in each week's `01-introduction-*.md` note. Full rules: `.cursor/rules/08_file-naming-conventions.mdc`.
+
+**Learning Flow**: Read notes → Do quizzes → Implement in notebooks → Discuss examples
+
+---
+
+## 🔧 Development Guidelines
+
+### Source Material Staging
+
+**🚫 Critical Restrictions:**
+
+- **Read-Only Policy**:
+ - **NEVER modify** any file inside `source-material/`
+ - **NEVER overwrite** any file inside `source-material/`
+ - **NEVER edit** content even if it contains errors
+ - Files are **permanent reference materials**
+
+- **No Deletion Policy**:
+ - **NEVER delete** anything from `source-material/`
+ - Content remains even after migration
+ - Serves as **permanent historical reference**
+
+- **Export Location Policy (.pdf/.pptx)**:
+ - **NEVER export to `docs/exports/`** when the source file is under `source-material/`
+ - Create converted artifacts in the **same `source-material` location tree** as the input file
+ - Keep source and converted files colocated for auditability
+
+**🔄 Migration Workflow:**
+1. Read from `source-material/` to understand concepts
+2. Synthesize - Rewrite in your own words (NO copy-paste)
+3. Publish to educational folders (`src/weekN/01-notes/`, `src/weekN/02-quizzes/`, `src/weekN/03-notebooks/`, `src/weekN/04-discussions/`, `docs/`, `src/`)
+4. Cite when using specific algorithms/theorems
+
+**✅ Zero-Copy Policy:**
+- **Good Synthesis**: Demonstrates understanding, uses different vocabulary, explains concepts
+- **Bad Synthesis (Rejected)**: Word-for-word copying, minor rephrasing, close paraphrasing without understanding
+
+### Zero-Copy Policy
+
+- All notes and code must be original syntheses of learning materials.
+- No direct copying from textbooks without citation.
+
+### Project Focus
+
+- **Algorithm Accuracy**: Ensure all mathematical formulas and algorithm implementations are correct.
+- **Code Quality**: Use clear, well-commented Python code.
+- **Visualization**: Use Matplotlib and Seaborn for clear algorithm visualizations. Use Mermaid diagrams with ASCII fallbacks wherever a visual explanation is applicable.
+
+### Code Style (Python)
+
+- Follow PEP 8 style guide.
+- Use meaningful variable names (e.g., `learning_rate` instead of `lr`).
+- Use type hints where appropriate.
+- **Comments**: Comment liberally to explain the *why* of the algorithm step, not just the *how*.
+- **No hardcoded paths**: Use `pathlib` or relative paths.
+
+### Code Comments Philosophy
+
+- Explain the **algorithmic reason** for the operation (e.g., "We normalize here to prevent gradient explosion").
+- Explain the **mathematical mapping** (e.g., "`theta` represents the model parameters in this cost function").
+- Not just syntax explanation (avoid: "This creates a list").
+
+### Documentation Standards
+
+- **Review reports**: All review reports go in `docs/reviews/`.
+- **Reference materials**: General reference docs go in `docs/reference/`.
+- **Notes**: Synthesized study notes go in `src/weekN/01-notes/`.
+- **Teaching style**: Use beginner-friendly wording, explain ideas in layman language, and add realistic business use cases wherever practical.
+
+### Notebook Guidelines
+
+- Structure notebooks with clear headers.
+- Include markdown cells explaining the algorithm concept before the code.
+- Use LaTeX for mathematical formulas.
+- Ensure all cells run sequentially.
+- **Logical Flow**: Import -> Load Data -> Implement Algorithm -> Train -> Evaluate -> Visualize.
+- **No Hidden State**: Avoid variables defined in deleted cells.
+- **Reproducibility**: Always set random seeds (`np.random.seed(42)`) for reproducible results.
+- **Visualization Standards**: All plots must have titles, axis labels, and legends.
+
+### Algorithm Visualization Guidelines
+
+- Use Matplotlib and Seaborn for clear algorithm visualizations.
+- Use Mermaid diagrams with ASCII fallbacks for process flows, dependencies, and algorithm structure wherever applicable.
+- Always label axes with meaningful names (e.g., "Training Loss" not just "y").
+- Include legends when comparing multiple algorithms or hyperparameters.
+- Use appropriate plot types (learning curves, decision boundaries, confusion matrices, etc.).
+
+---
+
+## 🚀 Environment & Commands
+
+**Environment**: Windows, PowerShell, Python 3.x, Jupyter Notebooks
+**Note**: All commands and scripts should use PowerShell syntax. File paths use Windows format.
+
+**Python Environment:**
+
+```powershell
+# Optional: Suppress cross-drive hardlink warnings (if expected)
+$Env:UV_LINK_MODE = "copy"
+
+# Create virtual environment and install dependencies
+uv sync
+```
+
+**Jupyter:**
+
+```powershell
+jupyter notebook
+```
+
+---
+
+## 🧠 Prompt Engineering Tips
+
+When asking AI assistants for help:
+
+- Specify the algorithm clearly (e.g., "Explain gradient descent").
+- Ask for a beginner-friendly explanation in everyday language before formal detail.
+- Ask for a realistic business use case when learning a new concept.
+- Request Python implementation from scratch (e.g., "Implement linear regression without sklearn").
+- Ask for mathematical explanations using LaTeX.
+- Request visualizations when appropriate (e.g., "Create a plot showing the learning curve").
+- Specify reproducibility requirements (e.g., "Use random seed 42 for reproducibility").
+
+## ✅ Quality Checklist
+
+### Before Submitting Code/Notebooks
+
+- [ ] **Kernel Restart & Run All** passes without errors.
+- [ ] All random processes use fixed seeds for reproducibility.
+- [ ] Visualizations have titles, labels, and legends.
+- [ ] Mermaid diagrams include ASCII fallbacks wherever a visual explanation is applicable.
+- [ ] Code comments explain the *why* (algorithmic reasoning), not just the *how*.
+- [ ] Mathematical formulas are correctly formatted in LaTeX.
+- [ ] Variable names are descriptive and meaningful.
+- [ ] No hardcoded paths (use `pathlib` or relative paths).
+- [ ] Algorithm implemented from scratch (not using sklearn directly).
+
+### Content Review
+
+- [ ] Content is original synthesis (zero-copy policy).
+- [ ] Algorithm concepts are explained before code implementation.
+- [ ] Citations included for algorithms and theorems.
+- [ ] All algorithm assumptions are verified before implementation.
