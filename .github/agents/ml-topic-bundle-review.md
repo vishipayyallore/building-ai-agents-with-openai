@@ -8,11 +8,13 @@ readonly: true
 # Session Bundle Review Subagent
 
 Focus on:
+
 - `sessions/`
 - `README.md`
 - `docs/`
 
 Check for:
+
 - broken links
 - stale commands
 - inconsistent route/API references

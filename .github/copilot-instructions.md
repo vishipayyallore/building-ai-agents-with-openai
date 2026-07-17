@@ -9,6 +9,7 @@
 This repository is the public workshop application for live AI-agent sessions.
 
 It contains one evolving app stack:
+
 - React + TypeScript frontend (`src/frontend`)
 - FastAPI backend (`src/backend`)
 - MCP tool server (`src/mcp-server`)

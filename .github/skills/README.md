@@ -5,6 +5,7 @@ This folder contains repository-specific skills for `building-ai-agents-with-ope
 ## Scope
 
 Skills here should target this workshop app and its real structure:
+
 - `src/backend`
 - `src/frontend`
 - `src/mcp-server`

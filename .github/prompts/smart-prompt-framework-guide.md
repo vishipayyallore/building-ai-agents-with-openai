@@ -20,14 +20,17 @@ Objective: Update session docs so run commands exactly match current backend/fro
 Scope: `README.md`, `docs/*.md`, `sessions/session-01-build-your-first-agent/*.md`
 
 Constraints:
+
 - Do not change application runtime behavior.
 - Keep edits minimal and objective.
 - No broken links.
 
 Validation:
+
 - Confirm documented commands run from stated directories.
 - Run markdown lint for changed docs.
 
 Output:
+
 - List files changed
 - Summarize why each change was needed

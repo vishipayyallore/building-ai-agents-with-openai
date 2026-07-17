@@ -10,6 +10,7 @@ readonly: true
 Run checks from `.github/skills/ci-checks/SKILL.md`.
 
 Report:
+
 - Backend lint/tests
 - Frontend lint/tests/build
 - Markdown lint
