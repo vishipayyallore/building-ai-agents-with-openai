@@ -8,9 +8,9 @@
 
 ## Known issues
 
-- None at release; checkout `v1.0-build-your-first-agent` and follow the root [README.md](../../README.md)
+- Release tag `v1.0-build-your-first-agent` is not published yet; use `main` and follow the root [README.md](../../README.md)
 
 ## Future improvements
 
-- Finish lean Teaching Product publish (`building-ai-agents-with-openai`) per [ADR-013](../../docs/ADRs/ADR-013-lean-teaching-product.md)
+- Publish lean Teaching Product tag `v1.0-build-your-first-agent` when freezing Demo 1
 - Add attendee exercises under `exercises/` as the club session is finalized

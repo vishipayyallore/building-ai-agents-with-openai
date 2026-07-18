@@ -8,7 +8,7 @@ This folder is a **learning package**. It explains the application. It does **no
 | This course session | This folder |
 | How to run (Teaching Product) | Root [`README.md`](../../README.md) |
 
-Binding to app state: [version.md](./version.md) · Release tag: `v1.0-build-your-first-agent`
+Binding to app state: [version.md](./version.md) · Intended release tag: `v1.0-build-your-first-agent` (create when publishing)
 
 ## Objectives
 
@@ -34,14 +34,15 @@ Session 1 delivers Home + Level 1 (direct LLM) + Level 2 (Proxy Agent + MCP) in 
 
 | | |
 | --- | --- |
-| **Release tag** | `v1.0-build-your-first-agent` |
+| **Intended release tag** | `v1.0-build-your-first-agent` (not published yet) |
 | **Pin details** | [version.md](./version.md) |
 
 ## How to checkout
 
 ```bash
-git fetch --tags
-git checkout v1.0-build-your-first-agent
+git checkout main
+# After the release tag is published:
+# git fetch --tags && git checkout v1.0-build-your-first-agent
 ```
 
 ## How to run

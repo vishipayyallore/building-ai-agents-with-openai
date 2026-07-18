@@ -1,0 +1,10 @@
+---
+description: Primary directives for agent edits
+globs: *
+---
+
+# Primary Directives
+
+- Prefer minimal, targeted changes.
+- Preserve working behavior unless change request requires behavior updates.
+- Keep documentation aligned with code and commands.

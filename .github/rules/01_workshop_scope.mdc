@@ -1,0 +1,17 @@
+---
+description: Repository scope and intent for workshop edits
+globs: *
+alwaysApply: true
+---
+
+# Workshop Scope
+
+This repository is a workshop application and documentation workspace for
+`building-ai-agents-with-openai`.
+
+Focus changes on:
+
+- runnable app behavior (`src/backend`, `src/frontend`, `src/mcp-server`)
+- clear session documentation (`sessions/`)
+- correct backend/frontend/MCP integration
+- accurate docs and helper tooling (`docs/`, `tools/`, `.github/`)

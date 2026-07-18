@@ -4,17 +4,17 @@
 
 Detailed presenter script and execution guide for Demo 1.
 
-> **Teaching Product note:** Attendees run from the public repo using the root [README.md](../../README.md) and this session's [README.md](./README.md). Relative links below to `docs/…` are for instructors working in the private Engineering Organization — those files are not published ([ADR-013](../../docs/ADRs/ADR-013-lean-teaching-product.md)).
+> **Teaching Product note:** Attendees run from the public repo using the root [README.md](../../README.md), [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md), and this session's [README.md](./README.md).
 
 | | |
 | --- | --- |
 | **Duration** | ~45 minutes |
-| **Maturity levels** | **Level 1** — Direct LLM and **Level 2** — Proxy Agent ([§4.1](../../docs/02-master-plan.md#41-agent-maturity-levels)) |
+| **Maturity levels** | **Level 1** — Direct LLM and **Level 2** — Proxy Agent (backend `AgentMaturityLevel` enum) |
 | **App entry** | [http://localhost:5173](http://localhost:5173) (Home) |
 | **Tag when complete** | After Demo 1, create and push `v1.0-build-your-first-agent` |
-| **Dashboard reference** | [docs/13-observability-dashboard.md](../../docs/13-observability-dashboard.md) |
-| **Attendee setup** | Root [README.md](../../README.md) (private instructors may also use [docs/03-getting-started.md](../../docs/03-getting-started.md)) |
-| **Master plan** | [docs/02-master-plan.md](../../docs/02-master-plan.md) |
+| **Dashboard reference** | Level 2 Agent Dashboard UI (`/demo/level-2`) |
+| **Attendee setup** | Root [README.md](../../README.md) and [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md) |
+| **Run guide** | [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md) |
 
 ### App routes (Demo 1)
 
@@ -26,9 +26,9 @@ Detailed presenter script and execution guide for Demo 1.
 
 After Demo 1 is complete, create and push the Git tag `v1.0-build-your-first-agent` to freeze **Level 2** plus the Home and Level 1 contrast paths in the same frontend.
 
-> **Presenter framing:** Demo 1 code is already on `main`. This July session is a **walkthrough and guided extension** of the implemented stack — not greenfield scaffolding. Attendees arrive with the app running per [03-getting-started.md](../../docs/03-getting-started.md).
+> **Presenter framing:** Demo 1 code is already on `main`. This July session is a **walkthrough and guided extension** of the implemented stack — not greenfield scaffolding. Attendees arrive with the app running per [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md).
 
-> **Documentation governance:** This file teaches Demo 1 live. Canonical architecture and maturity levels: [master plan §4](../../docs/02-master-plan.md#4-architecture-mental-model). Decision Timeline contract: [13-observability-dashboard.md](../../docs/13-observability-dashboard.md). Prefer linking over duplicating — see [Documentation governance](../../docs/02-master-plan.md#documentation-governance).
+> **Documentation governance:** This file teaches Demo 1 live. Canonical maturity levels: backend `AgentMaturityLevel` enum and Home page. Prefer linking to root README / docs/02-how-to-execute.md over duplicating run steps.
 
 ### Presenter note — Demo 1 timeline instrumentation
 
@@ -189,7 +189,7 @@ React Dashboard (/demo/level-2)
 
 ### One week before (attendees)
 
-Send a link to [docs/03-getting-started.md](../../docs/03-getting-started.md) and ask them to complete **Developer Setup**:
+Send a link to [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md) and ask them to complete **Developer Setup**:
 
 - [ ] Python 3.13+, Node 20 LTS, `uv`, Git installed
 - [ ] Repo cloned
@@ -210,7 +210,7 @@ Send a link to [docs/03-getting-started.md](../../docs/03-getting-started.md) an
 ### 10 minutes before going live
 
 ```powershell
-cd D:\GitHub\agentic-engineering-in-practice
+cd <repo-root>
 
 # Known-good checkpoint — instant rollback if live coding goes wrong
 git tag -a session-1-live-start -m "Checkpoint before Demo 1 live session"
@@ -228,7 +228,7 @@ uv run pytest -q
 **Terminal 1 — Backend** (repository root)
 
 ```powershell
-cd D:\GitHub\agentic-engineering-in-practice
+cd <repo-root>
 uv sync --all-groups
 uv run uvicorn app.main:app --app-dir src/backend --reload --port 8000
 ```
@@ -243,7 +243,8 @@ Uvicorn running on http://127.0.0.1:8000
 **Terminal 2 — Frontend**
 
 ```powershell
-cd D:\GitHub\agentic-engineering-in-practice
+cd <repo-root>
+cd src/frontend
 npm run dev
 ```
 
@@ -299,7 +300,7 @@ See [Live demo script](#live-demo-script-45-minutes) below.
 Run this before every presentation:
 
 ```powershell
-cd D:\GitHub\agentic-engineering-in-practice
+cd <repo-root>
 
 # 1. Unit + integration tests
 uv run pytest -q
@@ -324,7 +325,7 @@ Write-Host $r.maturityName      # expect: PROXY_AGENT
 Write-Host $r.events.Count      # expect: 8 events (Demo 1 baseline — re-verify after Session 2 streaming)
 
 # Optional — full backend E2E (health + Level 1 + Level 2)
-# powershell -File tools/e2e-smoke.ps1
+# uv run pytest -q
 
 # 5. Frontend build (catches TypeScript errors)
 cd src\frontend
@@ -341,7 +342,7 @@ npm run build
 
 **Optional prop:** Use `/demo/level-1` for the Level 1 live demo — or ChatGPT in a second tab. Do **not** open Level 2 until you are ready to contrast agentic behavior.
 
-**Show:** Level 1 flow on `/demo/level-1` (or diagram from [§4.1](../../docs/02-master-plan.md#41-agent-maturity-levels)):
+**Show:** Level 1 flow on `/demo/level-1` (or diagram from Agent Maturity Levels (backend `AgentMaturityLevel` enum)):
 
 ```text
 User
@@ -408,7 +409,7 @@ Session 1  →  Session 2  →  Session 3  →  Session 4  →  Session 5  →  
 
 **Say:**
 
-> "This is a 15-session curriculum mapped to **Agent Maturity Levels** — see [§4.1 in the master plan](../../docs/02-master-plan.md#41-agent-maturity-levels). Today is Session 1 at **Level 2**: a Proxy Agent with tool calling and a dashboard that shows every decision. Every future session extends this same codebase, not a new one."
+> "This is a 15-session curriculum mapped to **Agent Maturity Levels** — see the Home page maturity ladder / `AgentMaturityLevel` enum. Today is Session 1 at **Level 2**: a Proxy Agent with tool calling and a dashboard that shows every decision. Every future session extends this same codebase, not a new one."
 
 **Say:**
 
@@ -620,7 +621,7 @@ flowchart LR
 
 > "Today the model is hard-coded. We do that deliberately — once you've seen the agent loop work directly, you'll understand exactly why a Provider Interface matters in Session 3. Abstractions after the problem is understood."
 
-**Show:** Architecture diagram or [docs/02-master-plan.md §4](../../docs/02-master-plan.md).
+**Show:** Architecture diagram or the Home page architecture summary.
 
 **Say:**
 
@@ -881,9 +882,9 @@ Today (Level 2)                Next (Level 3)              Then
 
 > "Session 15 is an Enterprise AI Platform — still Level 5 maturity, now cloud-deployed with model gateway, tracing, and production monitoring. Everything we built today is still running underneath."
 
-**Show:** README roadmap table — Demo 1 ✅ Released (`v1.0-build-your-first-agent`) → Demo 2 📅.
+**Show:** README roadmap table — Demo 1 ✅ Available → Demo 2 📅.
 
-**Tag the milestone:**
+**Tag the milestone** (publish when freezing this session):
 
 ```powershell
 git tag -a v1.0-build-your-first-agent -m "Demo 1: Build Your First AI Agent"
@@ -892,7 +893,7 @@ git push origin v1.0-build-your-first-agent
 
 **Say:**
 
-> "Everything we built today is frozen at tag `v1.0-build-your-first-agent`. Clone the repo, checkout that tag, and you have exactly what we demoed — Home, Level 1 at `/demo/level-1`, and the Level 2 Proxy Agent at `/demo/level-2`. Next session: conversation state and streaming — the Agent Runtime climbs to Level 3."
+> "Once we push tag `v1.0-build-your-first-agent`, anyone can clone the repo, check out that tag, and reproduce exactly what we demoed — Home, Level 1 at `/demo/level-1`, and the Level 2 Proxy Agent at `/demo/level-2`. Until then, use `main`. Next session: conversation state and streaming — the Agent Runtime climbs to Level 3."
 
 ---
 
@@ -900,7 +901,7 @@ git push origin v1.0-build-your-first-agent
 
 ### Agent maturity levels (reference)
 
-Condensed from [§4.1](../../docs/02-master-plan.md#41-agent-maturity-levels). Use when explaining *why* a future session exists, not as a checklist.
+Condensed from Agent Maturity Levels (backend `AgentMaturityLevel` enum). Use when explaining *why* a future session exists, not as a checklist.
 
 | Level | Agent Type | Route / API | Today? |
 | ----- | ---------- | ----------- | ------ |
@@ -975,7 +976,7 @@ UI uses Font Awesome icons with text labels (see `ToolRegistry.tsx`):
 | `OPENAI_API_KEY is not set` in Final Response | Ensure `.env` is at **repo root**, restart backend |
 | Blank timeline / network error | Backend not running on 8000; check Terminal 1 |
 | CORS or fetch failed | Use `localhost:5173` (Vite proxy), not file://; confirm route (`/demo/level-1` vs `/demo/level-2`) |
-| `npm ERR! enoent` while starting frontend | Run from repo root with `npm run dev`, or use `npm --prefix src/frontend run dev` |
+| `npm ERR! enoent` while starting frontend | `cd src/frontend` then `npm run dev` (or `npm --prefix src/frontend run dev` from repo root) |
 | Port already in use | `Get-NetTCPConnection -LocalPort 8000` / `5173`, stop conflicting process |
 | Agent error / MCP spawn fail | `uv sync --all-groups` from repo root; verify `uv` on PATH |
 | Wrong or slow response | Check OpenAI quota; retry with suggestion chip |
@@ -996,7 +997,7 @@ git checkout session-1-live-start
 - [ ] Create GitHub Release `v1.0-build-your-first-agent` with session notes and links
 - [ ] Update README Demo 1 status if you mark it complete
 - [ ] Note any issues in GitHub Issues (or `.github/workitems/`) for post-mortem
-- [ ] Share [docs/03-getting-started.md](../../docs/03-getting-started.md) with anyone who couldn't set up beforehand
+- [ ] Share [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md) with anyone who couldn't set up beforehand
 
 ---
 
@@ -1004,13 +1005,9 @@ git checkout session-1-live-start
 
 | Doc | Purpose |
 | --- | ------- |
-| [ADR-007](../../docs/ADRs/ADR-007-demo-routing-level1-level2.md) | Why Home + Level 1 + Level 2 routes (Option 2) |
-| [03-getting-started.md](../../docs/03-getting-started.md) | Attendee Developer Setup |
-| [04-introduction.md](../../docs/04-introduction.md) | Series overview |
-| [05-ai-agents.md](../../docs/05-ai-agents.md) | Agent concepts |
-| [08-tool-calling.md](../../docs/08-tool-calling.md) | Killer demo flow |
-| [13-observability-dashboard.md](../../docs/13-observability-dashboard.md) | Dashboard + event contract |
-| [02-master-plan.md §4.1](../../docs/02-master-plan.md#41-agent-maturity-levels) | Agent Maturity Levels taxonomy |
-| [02-master-plan.md](../../docs/02-master-plan.md) | Full series roadmap |
-| [01-repository-structure.md](../../docs/01-repository-structure.md) | Folder layout |
-| [architecture/demo-1-stack.md](../../docs/architecture/demo-1-stack.md) | Demo 1 file map |
+| [README.md](../../README.md) | Public landing, roadmap, quick start |
+| [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md) | Attendee developer setup and run |
+| [docs/01-folder-structure.md](../../docs/01-folder-structure.md) | Folder layout |
+| Home page + `AgentMaturityLevel` enum | Agent Maturity Levels taxonomy |
+| [README.md](../../README.md) §3–4 | Full series roadmap |
+| `/demo/level-1` and `/demo/level-2` | Live Level 1 / Level 2 demos |

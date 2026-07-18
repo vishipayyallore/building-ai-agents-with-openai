@@ -314,6 +314,7 @@ FakesAssemblies/
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 node_modules/
+src/frontend/dist/
 
 # Visual Studio 6 build log
 *.plg
@@ -420,6 +421,9 @@ FodyWeavers.xsd
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Optional local staging for raw imports (never commit dumps)
+source-material/
 
 # Windows Installer files from build outputs
 *.cab

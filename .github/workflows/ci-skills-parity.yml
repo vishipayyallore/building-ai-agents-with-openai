@@ -1,0 +1,55 @@
+name: Skills Parity (.github)
+
+on:
+  push:
+    branches: [main, master, 'swamy/**']
+    paths:
+      - '.github/skills/**'
+      - '.github/workflows/ci-skills-parity.yml'
+  pull_request:
+    branches: [main, master, 'swamy/**']
+    paths:
+      - '.github/skills/**'
+      - '.github/workflows/ci-skills-parity.yml'
+  workflow_dispatch:
+
+jobs:
+  skills-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate skill files exist
+        run: |
+          test -f .github/skills/README.md
+          test -n "$(find .github/skills -name 'SKILL.md' -print -quit)"
+
+      - name: Validate SKILL frontmatter fields
+        run: |
+          exit_code=0
+          for f in $(find .github/skills -name 'SKILL.md'); do
+            head -n 20 "$f" | grep -q "^---$" || { echo "Missing frontmatter marker: $f"; exit_code=1; }
+            grep -q "^name:" "$f" || { echo "Missing name in frontmatter: $f"; exit_code=1; }
+            grep -q "^description:" "$f" || { echo "Missing description in frontmatter: $f"; exit_code=1; }
+          done
+          exit $exit_code
+
+      - name: README inventory vs skill folders
+        run: |
+          exit_code=0
+          for dir in .github/skills/*/; do
+            name=$(basename "$dir")
+            [ "$name" = "." ] && continue
+            test -f "$dir/SKILL.md" || { echo "Missing SKILL.md in $dir"; exit_code=1; continue; }
+            folder_name=$(basename "$dir")
+            skill_name=$(grep -m1 '^name:' "$dir/SKILL.md" | sed 's/^name:[[:space:]]*//')
+            if [ "$folder_name" != "$skill_name" ]; then
+              echo "Folder/name mismatch: folder=$folder_name name=$skill_name"
+              exit_code=1
+            fi
+            grep -q "\`$folder_name\`" .github/skills/README.md || {
+              echo "skills/README.md missing inventory entry for $folder_name"
+              exit_code=1
+            }
+          done
+          exit $exit_code

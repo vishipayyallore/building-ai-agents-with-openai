@@ -1,0 +1,14 @@
+---
+description: Quality assurance checks
+globs: *
+---
+
+# QA Rules
+
+When relevant, verify with:
+
+```powershell
+uv run ruff check src/backend src/mcp-server
+uv run pytest -q
+cd src/frontend; npm ci; npm run lint; npm test; npm run build
+```

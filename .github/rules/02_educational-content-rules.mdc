@@ -1,0 +1,11 @@
+---
+description: Documentation quality rules
+globs: ["**/*.md"]
+---
+
+# Documentation Rules
+
+- Keep commands executable from stated directories.
+- Keep links valid and workspace-relative where appropriate.
+- Avoid stale references to external or missing repo structures.
+- Keep sections concise and action-oriented.

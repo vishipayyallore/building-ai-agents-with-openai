@@ -14,6 +14,8 @@ from app.config import settings
 async def lifespan(app: FastAPI):
     if settings.openai_api_key and not os.environ.get("OPENAI_API_KEY"):
         os.environ["OPENAI_API_KEY"] = settings.openai_api_key
+    if settings.openweather_api_key and not os.environ.get("OPENWEATHER_API_KEY"):
+        os.environ["OPENWEATHER_API_KEY"] = settings.openweather_api_key
     yield
 
 

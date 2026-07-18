@@ -1,129 +1,216 @@
-# Building AI Agents with OpenAI
+# Building AI Agents with OpenAI - Swamy's Tech Skills Academy
 
-Hands-on workshop repo for **Swamy's Tech Skills Academy**: one evolving app (React + FastAPI + OpenAI Agent SDK + MCP) taught across live sessions.
+> One repo. One evolving app. Fifteen sessions from first agent to enterprise.
 
-This repository is the **Teaching Product** — clone it, run today's demo, follow the released session guide. Application code is published from a private Engineering Organization; do not develop the app here.
+[![Python 3.13](https://img.shields.io/badge/Python-3.13-blue?style=flat-square)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square)](https://react.dev/)
+[![OpenAI Agents SDK](https://img.shields.io/badge/OpenAI-Agents%20SDK-412991?style=flat-square)](https://openai.github.io/openai-agents-python/)
+[![MCP](https://img.shields.io/badge/MCP-FastMCP-orange?style=flat-square)](https://github.com/jlowin/fastmcp)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
+
+This is the hands-on workshop repository for **Swamy's Tech Skills Academy**.
+You do not build fifteen toy apps. You evolve one production-grade app built
+with React + FastAPI + OpenAI Agent SDK + MCP across live sessions.
+
+Use it to learn, teach, and ship.
+
+> You are on active development branch `swamy/16jul-work`.
+> Stable releases are tracked on `main` and by version tags.
 
 ---
 
-## How to run today's demo
+## 1. Live Demo (Current Session)
+
+- Backend health: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+- Frontend dashboard: [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
+
+Full run guide: [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
+
+---
+
+## 2. Why this repo
+
+Most AI tutorials stop at a notebook. Enterprises need reliable,
+evaluatable, and deployable systems.
+
+You will master the five pillars of enterprise AI in one codebase:
+
+1. LLMs: the intelligence layer
+2. Generative AI: the creation layer
+3. RAG: the reliability layer
+4. AI Agents: the execution layer
+5. Agentic AI: the autonomy layer
+
+Each session adds one pillar in code. By Session 15, you have a
+cloud-native, multi-agent platform.
+
+---
+
+## 3. Session roadmap and tags
+
+| Session | Focus | Status | Guide/Tag |
+| ------- | ----- | :----: | --------- |
+| 1 | Build Your First AI Agent | ✅ Available | [sessions/session-01-build-your-first-agent/README.md](sessions/session-01-build-your-first-agent/README.md) (intended tag: `v1.0-build-your-first-agent`) |
+| 2 | Stateful Agents | 🚧 Next | Coming soon |
+| 3 | Multi-Provider Agents | 🚧 Planned | Coming soon |
+| 4 | Context Engineering | 🚧 Planned | Coming soon |
+| 5 | Knowledge-Driven Agents | 🚧 Planned | Coming soon |
+| 6 | Multi-Agent Engineering | 🚧 Planned | Coming soon |
+| 7 | Production Foundations | 🚧 Planned | Coming soon |
+| 8 | Evaluation and Guardrails | 🚧 Planned | Coming soon |
+| 9 | Local Capstone | 🚧 Planned | Coming soon |
+| 10-15 | Platform and Enterprise Track | 🚧 Planned | Coming soon |
+
+Session 1 is available on `main` and on the current development branch.
+Intended release tag (create when publishing): `v1.0-build-your-first-agent`
+
+```bash
+git checkout main
+# After the release tag is published:
+# git fetch --tags && git checkout v1.0-build-your-first-agent
+```
+
+`main` tracks the latest stable release.
+`swamy/16jul-work` is the active development branch.
+
+---
+
+## 4. Learning journey
+
+```mermaid
+flowchart TB
+    S1["AI Agent"]
+    S2["Stateful AI Agent"]
+    S3["Multi-Provider AI"]
+    S4["Context Engineering"]
+    S5["Knowledge Agent"]
+    S6["Multi-Agent System"]
+    S7["Production Agent"]
+    S8["Evaluation & Guardrails"]
+    S9["Local Capstone"]
+    S10["Distributed Persistence"]
+    S11["Event-Driven AI"]
+    S12["Cloud-Native AI"]
+    S13["Kubernetes & Cloud"]
+    S14["Enterprise Operations"]
+    S15["Enterprise Capstone"]
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
+    S9 --> S10 --> S11 --> S12 --> S13 --> S14 --> S15
+
+    classDef phase1 fill:#eef6ff,stroke:#6b9ac4,color:#1f2937,stroke-width:1px;
+    classDef phase2 fill:#f3f8f1,stroke:#7ca982,color:#1f2937,stroke-width:1px;
+
+    class S1,S2,S3,S4,S5,S6,S7,S8,S9 phase1;
+    class S10,S11,S12,S13,S14,S15 phase2;
+```
+
+---
+
+## 5. Architecture
+
+```mermaid
+flowchart LR
+    UI[React Dashboard\nVite + Tailwind]
+    API[FastAPI\nPython 3.13]
+    AGENT[OpenAI Agent SDK]
+    TOOLS[Tools\nMCP / FastMCP]
+    RAG[(Vector DB\nFuture Sessions)]
+    MODELS[LLMs\nOpenAI, Gemini, Local]
+
+    UI --> API --> AGENT --> TOOLS
+    AGENT --> RAG
+    AGENT --> MODELS
+```
+
+---
+
+## 6. Stack
+
+- Frontend: React 19, TypeScript, Vite, Tailwind CSS
+- Backend: Python 3.13, FastAPI, Pydantic, OpenAI Agent SDK
+- Agent tools: Model Context Protocol (MCP), FastMCP
+- Tooling: uv, pytest
+
+---
+
+## 7. Quick start (3 minutes to first agent)
 
 ### Prerequisites
 
-| Tool | Version |
-| ---- | ------- |
-| Python | 3.13+ |
-| Node.js | 20 LTS |
-| [uv](https://docs.astral.sh/uv/) | latest |
-| Git | 2.x |
+- Python 3.13+ and `uv`
+- Node.js 20+
+- OpenAI API key
 
-### 1. Clone and configure
-
-```powershell
-git clone https://github.com/vishipayyallore/building-ai-agents-with-openai.git
-cd building-ai-agents-with-openai
-copy .env.example .env
-```
-
-Edit `.env` and set at minimum:
-
-```text
-OPENAI_API_KEY=sk-...
-```
-
-`OPENWEATHER_API_KEY` is optional — the weather tool returns demo data when unset.
-
-### 2. Install
+### 1) Setup
 
 ```powershell
 uv sync --all-groups
-
-cd src\frontend
-npm install
-cd ..\..
+Copy-Item .env.example .env
+# Add OPENAI_API_KEY to .env
 ```
 
-### 3. Run (two terminals)
-
-**Terminal 1 — Backend** (from repo root)
+### 2) Run backend
 
 ```powershell
 uv run uvicorn app.main:app --app-dir src/backend --reload --port 8000
 ```
 
-**Terminal 2 — Frontend**
+### 3) Run frontend
 
 ```powershell
-cd src\frontend
+cd src/frontend
+npm install
 npm run dev
 ```
 
 Open [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
+and validate [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health).
 
-> The MCP server starts automatically via stdio on each `POST /api/chat`. Do **not** start `src/mcp-server` in a separate terminal.
-
-### 4. Try it
-
-- `What is 15 * 23?`
-- `What's the weather in Seattle?`
-
-Health check: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+Full guide: [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
 
 ---
 
-## What's in this repo
+## 8. Project structure
 
 ```text
 building-ai-agents-with-openai/
-├── README.md          ← product homepage (this file)
-├── src/               # Latest released application
-├── sessions/          # Released session guides only
-├── LICENSE
+├── .github/                     # Rules, skills, agents, workflows
+├── docs/                        # Runbooks and supporting docs
+├── sessions/                    # Published workshop guides
+│   └── session-01-build-your-first-agent/
+├── src/
+│   ├── backend/                 # FastAPI + Agents SDK runtime
+│   ├── frontend/                # React dashboard
+│   └── mcp-server/              # MCP tool server
+├── tools/                       # Helper scripts (not runtime)
 ├── .env.example
 ├── pyproject.toml
-└── uv.lock
+└── README.md
 ```
 
-`main` always tracks the **latest stable release**. Earlier milestones:
-
-```bash
-git fetch --tags
-git checkout v1.0-build-your-first-agent
-```
+Details: [docs/01-folder-structure.md](docs/01-folder-structure.md)
 
 ---
 
-## Session roadmap
+## 9. How to use this repo
 
-| Session | Status |
-| ------- | :----: |
-| Session 1 – Build Your First AI Agent | ✅ Available |
-| Session 2 – Stateful Agents | 🚧 Coming Soon |
-| Session 3 – Multi-Provider Agents | 🚧 Coming Soon |
-| Session 4 – Context Engineering | 🚧 Coming Soon |
-| Session 5 – Knowledge-Driven Agents | 🚧 Coming Soon |
-| Session 6 – Multi-Agent Engineering | 🚧 Coming Soon |
-| Session 7 – Production Foundations | 🚧 Coming Soon |
-| Session 8 – Evaluation & Guardrails | 🚧 Coming Soon |
-| Session 9 – Local Capstone | 🚧 Coming Soon |
-| Sessions 10–15 – Platform / enterprise track | 🚧 Coming Soon |
+If you are a learner:
 
-### Session 1 — Build Your First AI Agent
+1. Use `main` (or the published session tag once it exists).
+2. Run the demo.
+3. Follow the guide in [sessions/](sessions/).
 
-**Tag:** `v1.0-build-your-first-agent`
+If you are an instructor:
 
-Guide: [sessions/session-01-build-your-first-agent/README.md](sessions/session-01-build-your-first-agent/README.md)
+1. Use this repo as your teaching product.
+2. Prefer published tags for reproducible demos once tags are created.
+3. Use `swamy/16jul-work` for staging upcoming changes.
 
 ---
 
-## Stack
+## 10. Docs and license
 
-- **Frontend:** React, TypeScript, Vite, Tailwind CSS
-- **Backend:** Python 3.13, FastAPI, OpenAI Agent SDK, Pydantic
-- **Tools:** Model Context Protocol (MCP), FastMCP
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE).
+- Docs: [docs/01-folder-structure.md](docs/01-folder-structure.md), [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
+- License: MIT, see [LICENSE](LICENSE)

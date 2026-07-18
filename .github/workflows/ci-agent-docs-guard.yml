@@ -1,0 +1,58 @@
+name: Agent and Skill Docs Guard (.github)
+
+on:
+  push:
+    branches: [main, master, 'swamy/**']
+    paths:
+      - '.github/copilot-instructions.md'
+      - '.github/skills/**'
+      - '.github/agents/**'
+      - '.github/prompts/**'
+      - '.github/rules/**'
+      - '.github/workflows/ci-agent-docs-guard.yml'
+  pull_request:
+    branches: [main, master, 'swamy/**']
+    paths:
+      - '.github/copilot-instructions.md'
+      - '.github/skills/**'
+      - '.github/agents/**'
+      - '.github/prompts/**'
+      - '.github/rules/**'
+      - '.github/workflows/ci-agent-docs-guard.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure required files exist
+        run: |
+          test -f .github/copilot-instructions.md
+          test -f .github/skills/README.md
+          test -d .github/skills
+          test -d .github/agents
+          test -d .github/workflows
+          test -d .github/rules
+          test -d .github/prompts
+          test -f .github/prompts/task-prompt.md
+
+      - name: Block stale cross-repo references
+        run: |
+          # Scan .github including workflows; allowlist this step's own pattern string.
+          hits=$(grep -R -n -E "\.cursor/|CLAUDE\.md|\.clinerules|\.opencode" .github || true)
+          filtered=$(echo "$hits" | grep -v 'ci-agent-docs-guard.yml' | grep -v '^$' || true)
+          if [ -n "$filtered" ]; then
+            echo "Found stale imported references:"
+            echo "$filtered"
+            exit 1
+          fi
+
+      - name: Lint markdown in .github
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run markdownlint
+        run: npx --yes markdownlint-cli2 ".github/**/*.md"

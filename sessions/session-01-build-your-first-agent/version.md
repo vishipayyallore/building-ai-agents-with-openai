@@ -7,16 +7,11 @@ Session 01 – Build Your First Agent
 
 Release
 -------
-v1.0-build-your-first-agent
+v1.0-build-your-first-agent (intended; create when publishing)
 
 ADR Baseline
 ------------
-ADR-001
-ADR-002
-ADR-008
-ADR-003
-ADR-004
-ADR-007
+Not published in this lean public repo
 
 Repository State
 ----------------
@@ -29,7 +24,7 @@ src/
 Prerequisites
 -------------
 Python 3.13
-Node.js (see docs/03-getting-started.md)
+Node.js 20+ (see root README.md and docs/02-how-to-execute.md)
 
 Run
 ---
@@ -54,7 +49,7 @@ v2.0-stateful-agents
 
 Commit
 ------
-e2c09758cc8480cdcfb0b53cb1cbe93dd59cd4e4
+190aa2161fa04857371c6fb676376bdd1ce8121a
 
 Release Date
 ------------
@@ -63,6 +58,8 @@ Release Date
 
 Tag naming follows curriculum milestones (`vN.0-<descriptor>`) — not a parallel `v0.x.y` scheme.
 
+Until the release tag is published, use `main` (or your current clone branch):
+
 ```bash
-git checkout v1.0-build-your-first-agent
+git checkout main
 ```

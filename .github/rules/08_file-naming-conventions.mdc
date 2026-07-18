@@ -1,0 +1,10 @@
+---
+description: File naming conventions
+globs: *
+---
+
+# Naming Conventions
+
+- Keep names descriptive and consistent with current module patterns.
+- Use existing naming style within each folder.
+- Avoid introducing alternate naming schemes from unrelated repositories.

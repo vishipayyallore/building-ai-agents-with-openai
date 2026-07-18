@@ -1,0 +1,34 @@
+name: Documentation Quality (Markdown)
+
+on:
+  push:
+    branches: [main, master, 'swamy/**']
+    paths:
+      - '**/*.md'
+      - '.github/workflows/ci-documentation.yml'
+  pull_request:
+    branches: [main, master, 'swamy/**']
+    paths:
+      - '**/*.md'
+      - '.github/workflows/ci-documentation.yml'
+  workflow_dispatch:
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run markdown lint
+        run: |
+          npx --yes markdownlint-cli2 \
+            "README.md" \
+            "docs/**/*.md" \
+            "sessions/**/*.md" \
+            "src/**/*.md" \
+            ".github/**/*.md"

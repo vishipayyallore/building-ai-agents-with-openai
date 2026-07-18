@@ -1,0 +1,11 @@
+---
+description: Markdown standards
+globs: ["**/*.md"]
+---
+
+# Markdown Standards
+
+- Use clear headings and short sections.
+- Use fenced code blocks with language tags.
+- Keep links and paths accurate.
+- Prefer concise, practical wording.

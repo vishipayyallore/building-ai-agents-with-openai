@@ -1,0 +1,10 @@
+---
+description: Source material handling
+globs: *
+---
+
+# Reference Material Rule
+
+Treat any future reference-only folders as non-runtime content unless explicitly instructed otherwise.
+
+Do not assume such folders exist in the current repository structure.
