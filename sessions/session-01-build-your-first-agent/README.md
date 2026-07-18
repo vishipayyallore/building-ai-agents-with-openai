@@ -52,32 +52,37 @@ The application lives at the repo root — not inside this session folder.
 1. Follow the root [README.md](../../README.md) (clone → `.env` → `uv sync` → backend + frontend)
 2. Start **backend** and **frontend** only — MCP is spawned by the backend on each `POST /api/chat` (do not start `src/mcp-server` separately)
 3. Open [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
-4. Walk Level 1 and Level 2 using the presenter script: [speaker-notes.md](./speaker-notes.md)
+4. Walk Level 1 and Level 2 using the presenter script: [demo-script.md](./demo-script.md)
 
 Try:
 
 - `What is 15 * 23?`
 - `What's the weather in Seattle?`
 
+## Suggested reading order
+
+Files stay role-named (not numbered). Read in this order:
+
+1. **This README** — objectives, checkout, run
+2. **[version.md](./version.md)** — tag / commit binding for this milestone
+3. **[demo-script.md](./demo-script.md)** — live presenter walkthrough (~45 min)
+4. **[release-notes.md](./release-notes.md)** — what shipped (for releases / `gh release`)
+
 ## Walkthrough
 
-Live presenter script: [speaker-notes.md](./speaker-notes.md)
+Live presenter script: [demo-script.md](./demo-script.md)
 
 ## Folder structure (this package)
 
 ```text
 session-01-build-your-first-agent/
-├── README.md           # Session guide
-├── version.md          # Tag binding
-├── speaker-notes.md    # Live presenter / demo script
-└── release-notes.md
+├── README.md           # 1. Session guide (this file)
+├── version.md          # 2. Tag / commit binding
+├── demo-script.md      # 3. Live presenter / demo script
+└── release-notes.md    # 4. Milestone release notes
 ```
 
 No `src/` here — keep the package lightweight.
-
-## Exercises
-
-Deferred until the club exercises are authored (no empty `exercises/` scaffold).
 
 ## Next session
 

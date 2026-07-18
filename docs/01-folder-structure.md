@@ -30,7 +30,7 @@ building-ai-agents-with-openai/
 |   `-- session-01-build-your-first-agent/
 |       |-- README.md
 |       |-- release-notes.md
-|       |-- speaker-notes.md
+|       |-- demo-script.md
 |       `-- version.md
 |-- src/
 |   |-- backend/
