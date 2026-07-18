@@ -25,16 +25,16 @@ From your terminal:
 ```powershell
 git clone https://github.com/vishipayyallore/building-ai-agents-with-openai.git
 cd building-ai-agents-with-openai
-copy .env.example .env
+Copy-Item .env.example config\.env
 ```
 
-Edit `.env` and set at least:
+Edit `config/.env` and set at least:
 
 ```text
 OPENAI_API_KEY=sk-...
 ```
 
-`OPENWEATHER_API_KEY` is optional. When set in `.env`, the backend loads it and
+`OPENWEATHER_API_KEY` is optional. When set in `config/.env`, the backend loads it and
 passes it to the MCP weather tool; when unset, weather responses use demo data.
 
 ## 2. Install dependencies

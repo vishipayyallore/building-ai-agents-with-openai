@@ -7,6 +7,8 @@ This document describes the current folder layout for the teaching-product repos
 ```text
 building-ai-agents-with-openai/
 |-- .env.example
+|-- config/
+|   `-- README.md
 |-- .gitignore
 |-- .github/
 |   |-- agents/
