@@ -6,9 +6,8 @@ from pydantic import BaseModel, Field
 
 
 class AgentMaturityLevel(IntEnum):
-    """Agent Maturity Levels — conceptual ladder for this workshop series.
+    """Agent Maturity Levels — architectural lens from §4.1 of the master plan.
 
-    Canonical for this repository: this enum (also summarized on the Home page).
     IntEnum: members serialize as ints (`maturityLevel`) and expose `.name`
     for `maturityName` without a second lookup table. Ordered comparisons are
     valid (e.g. ``level >= AgentMaturityLevel.AUTONOMOUS_AGENT``).
@@ -30,7 +29,7 @@ def maturity_fields(level: AgentMaturityLevel) -> dict[str, int | str]:
     return {"maturity_level": int(level), "maturity_name": level.name}
 
 
-# Session 1 shipped maturity — Level 2 Proxy Agent. Import for /health and agent chat.
+# Session 1 shipped maturity — Level 2 Proxy Agent (§4.1). Import for /health and agent chat.
 CURRENT_MATURITY_LEVEL = AgentMaturityLevel.PROXY_AGENT
 
 # Level 1 baseline path — Direct LLM only (POST /api/llm).
@@ -113,6 +112,44 @@ class HealthResponse(BaseModel):
     demo: str
     maturity_level: int = Field(serialization_alias="maturityLevel")
     maturity_name: str = Field(serialization_alias="maturityName")
+
+    model_config = {"populate_by_name": True}
+
+
+class HomeEndpoint(BaseModel):
+    """One discoverable HTTP endpoint listed on GET /."""
+
+    method: str
+    path: str
+    description: str
+
+
+class HomeDocLink(BaseModel):
+    """One documentation surface discoverable from GET /."""
+
+    path: str
+    description: str
+
+
+class HomeDocumentation(BaseModel):
+    """Swagger / OpenAPI / ReDoc details exposed on the API home JSON."""
+
+    swagger: HomeDocLink
+    openapi: HomeDocLink
+    redoc: HomeDocLink
+
+
+class HomeResponse(BaseModel):
+    """API landing JSON for GET / — discovery payload for learners and tools."""
+
+    name: str
+    version: str
+    summary: str
+    demo: str
+    maturity_level: int = Field(serialization_alias="maturityLevel")
+    maturity_name: str = Field(serialization_alias="maturityName")
+    documentation: HomeDocumentation
+    endpoints: list[HomeEndpoint]
 
     model_config = {"populate_by_name": True}
 

@@ -28,7 +28,7 @@ export function Level1DemoPage() {
             Raw LLM Demo
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Prompt in, text out. No Agent Runtime, no MCP tools, no Decision Timeline.
+            Prompt in, text out. No Agent Runtime orchestration, no MCP tools, no Decision Timeline.
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-slate-200 bg-slate-50 p-4 font-mono text-[11px] leading-relaxed text-slate-700">
             {`User → Raw LLM Prompt → LLM Response`}

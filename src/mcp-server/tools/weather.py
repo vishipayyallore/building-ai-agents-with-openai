@@ -16,7 +16,7 @@ def get_weather(city: str) -> str:
     if not api_key:
         return (
             f"[demo mode] Weather in {city}: 22°C, partly cloudy. "
-            "Set OPENWEATHER_API_KEY in .env for live data."
+            "Set OPENWEATHER_API_KEY in config/.env for live data."
         )
 
     params = {"q": city, "appid": api_key, "units": "metric"}

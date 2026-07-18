@@ -123,8 +123,8 @@ flowchart LR
 
 ```powershell
 uv sync --all-groups
-Copy-Item .env.example .env
-# Add OPENAI_API_KEY to .env
+Copy-Item .env.example config\.env
+# Add OPENAI_API_KEY to config/.env
 ```
 
 ### 2) Run backend
@@ -141,8 +141,10 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
-and validate [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health).
+Open [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2).
+Validate API home [http://127.0.0.1:8000/](http://127.0.0.1:8000/),
+Swagger [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs),
+and health [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health).
 
 Full guide: [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
 
@@ -160,8 +162,8 @@ building-ai-agents-with-openai/
 │   ├── backend/                 # FastAPI + Agents SDK runtime
 │   ├── frontend/                # React dashboard
 │   └── mcp-server/              # MCP tool server
-├── tools/                       # Helper scripts (not runtime)
-├── .env.example
+├── config/                      # Local secrets home (`config/.env`)
+├── .env.example                 # Template → copy to config/.env
 ├── pyproject.toml
 └── README.md
 ```

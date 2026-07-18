@@ -1,7 +1,7 @@
 [project]
 name = "building-ai-agents-with-openai"
-version = "0.1.0"
-description = "Agentic Engineering in Practice — hands-on evolving AI agent application (Demo 1+)"
+version = "1.0.0"
+description = "Building AI Agents with OpenAI — hands-on evolving AI agent application (Demo 1+)"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -9,6 +9,7 @@ dependencies = [
     "uvicorn[standard]>=0.32.0",
     "pydantic>=2.10.0",
     "pydantic-settings>=2.6.0",
+    "python-dotenv>=1.0.0",
     "openai-agents>=0.2.0",
     "httpx>=0.28.0",
     "mcp>=1.1.0",

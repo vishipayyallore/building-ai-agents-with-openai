@@ -1,7 +1,7 @@
 """Level 1 — Direct LLM Interaction (§4.1).
 
-Raw prompt → model → text. No Agent Runtime orchestration, MCP, tools, or
-Decision Timeline events.
+Thin SDK wrapper: prompt → model → text. No MCP tools, no Decision Timeline
+events, and no Agent Runtime orchestration beyond a minimal Agent + Runner call.
 """
 
 from agents import Agent, Runner
@@ -20,7 +20,7 @@ async def run_direct_llm(message: str) -> LlmResponse:
         return LlmResponse(
             response=(
                 "Cannot call the model without OPENAI_API_KEY. "
-                "Copy .env.example to .env and add your key."
+                "Copy .env.example to config/.env and add your key."
             ),
             **maturity_fields(level),
         )
