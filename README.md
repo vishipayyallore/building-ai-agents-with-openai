@@ -50,7 +50,6 @@ cloud-native, multi-agent platform.
 | 9 | Local Capstone | 🚧 Planned | Coming soon |
 | 10-15 | Platform and Enterprise Track | 🚧 Planned | Coming soon |
 
-
 ---
 
 ## 3. Learning journey
@@ -189,5 +188,5 @@ If you are an instructor:
 
 ## 9. Docs and license
 
-- Docs: [docs/01-folder-structure.md](docs/01-folder-structure.md), [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
+- Docs: [docs/01-folder-structure.md](docs/01-folder-structure.md), [docs/02-how-to-execute.md](docs/02-how-to-execute.md), [docs/03-versioning-branching.md](docs/03-versioning-branching.md), [docs/04-releases.md](docs/04-releases.md)
 - License: MIT, see [LICENSE](LICENSE)

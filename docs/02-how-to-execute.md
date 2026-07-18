@@ -6,6 +6,8 @@ This guide explains how to run the Demo 1 application in this repository.
 
 - [README.md](../README.md)
 - [01-folder-structure.md](./01-folder-structure.md)
+- [03-versioning-branching.md](./03-versioning-branching.md)
+- [04-releases.md](./04-releases.md)
 
 ## Prerequisites
 

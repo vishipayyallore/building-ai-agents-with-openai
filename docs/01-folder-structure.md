@@ -19,6 +19,8 @@ building-ai-agents-with-openai/
 |-- docs/
 |   |-- 01-folder-structure.md
 |   |-- 02-how-to-execute.md
+|   |-- 03-versioning-branching.md
+|   |-- 04-releases.md
 |   `-- images/
 |       `-- .gitkeep
 |-- LICENSE
@@ -169,3 +171,5 @@ It does not duplicate application source code.
 
 - [README.md](../README.md)
 - [02-how-to-execute.md](./02-how-to-execute.md)
+- [03-versioning-branching.md](./03-versioning-branching.md)
+- [04-releases.md](./04-releases.md)
