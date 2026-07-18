@@ -49,7 +49,7 @@ v2.0-stateful-agents
 
 Commit
 ------
-190aa2161fa04857371c6fb676376bdd1ce8121a
+a1c7342f679a104e5e9573d5179dd7bffea163c0
 
 Release Date
 ------------

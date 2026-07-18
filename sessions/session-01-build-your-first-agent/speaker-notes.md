@@ -327,9 +327,10 @@ Write-Host $r.events.Count      # expect: 8 events (Demo 1 baseline — re-verif
 # Optional — full backend E2E (health + Level 1 + Level 2)
 # uv run pytest -q
 
-# 5. Frontend build (catches TypeScript errors)
+# 5. Frontend build (bundling/syntax errors) + typecheck (run separately — `vite build` does not type-check)
 cd src\frontend
 npm run build
+npx tsc --noEmit
 ```
 
 ---
@@ -1009,5 +1010,5 @@ git checkout session-1-live-start
 | [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md) | Attendee developer setup and run |
 | [docs/01-folder-structure.md](../../docs/01-folder-structure.md) | Folder layout |
 | Home page + `AgentMaturityLevel` enum | Agent Maturity Levels taxonomy |
-| [README.md](../../README.md) §3–4 | Full series roadmap |
+| [README.md](../../README.md) §2–3 | Full series roadmap |
 | `/demo/level-1` and `/demo/level-2` | Live Level 1 / Level 2 demos |
