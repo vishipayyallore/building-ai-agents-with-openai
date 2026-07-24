@@ -1,4 +1,4 @@
-# Agent skills (canonical)
+# Agent skills
 
 This folder contains repository-specific skills for `building-ai-agents-with-openai`.
 
@@ -11,6 +11,7 @@ Skills here should target this workshop app and its real structure:
 - `src/mcp-server`
 - `sessions/`
 - `docs/`
+- `config/`
 - `tools/`
 - `.github/`
 
@@ -26,3 +27,4 @@ Skills here should target this workshop app and its real structure:
 | `workspace-review` | Full workspace correctness audit |
 
 When updating a skill, keep examples and commands aligned with current repository paths.
+CI workflow `.github/workflows/ci-skills-parity.yml` validates skill frontmatter and README inventory (not a cross-tree mirror check).

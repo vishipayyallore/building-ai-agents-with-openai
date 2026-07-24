@@ -1,10 +1,12 @@
 ---
-description: Source material handling
+description: Reference-only / non-runtime material handling
 globs: *
 ---
 
-# Reference Material Rule
+# Reference-Only Material Rule
 
-Treat any future reference-only folders as non-runtime content unless explicitly instructed otherwise.
+Treat any future reference-only folders (for example `source-material/` or
+similar staging trees) as non-runtime content unless explicitly instructed
+otherwise.
 
 Do not assume such folders exist in the current repository structure.

@@ -14,4 +14,4 @@ Focus changes on:
 - runnable app behavior (`src/backend`, `src/frontend`, `src/mcp-server`)
 - clear session documentation (`sessions/`)
 - correct backend/frontend/MCP integration
-- accurate docs and helper tooling (`docs/`, `tools/`, `.github/`)
+- accurate docs and helper tooling (`docs/`, `tools/`, `config/`, `.github/`)

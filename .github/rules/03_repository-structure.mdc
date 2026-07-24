@@ -11,6 +11,7 @@ Primary paths:
 - `src/mcp-server` — MCP tools (spawned by backend)
 - `sessions/` — released session packages
 - `docs/` — operational documentation
+- `config/` — local secrets (`config/.env`); template is root `.env.example`
 - `tools/` — helper scripts (not runtime)
 - `.github/` — rules, skills, agents, workflows, CI
 
