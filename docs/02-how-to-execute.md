@@ -102,4 +102,4 @@ Press `Ctrl+C` in both terminals.
 ## Troubleshooting
 
 - If `npm run dev` fails with ENOENT, run it from `src/frontend` (not repo root).
-- If backend fails due to API key, ensure `.env` exists at repository root with `OPENAI_API_KEY`.
+- If backend fails due to API key, ensure `config/.env` exists with `OPENAI_API_KEY` (config/.env is preferred; repo-root `.env` is fallback).

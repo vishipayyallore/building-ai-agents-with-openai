@@ -193,7 +193,7 @@ Send a link to [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md) and 
 
 - [ ] Python 3.13+, Node 20 LTS, `uv`, Git installed
 - [ ] Repo cloned
-- [ ] `.env` created from `.env.example` with OpenAI credentials
+- [ ] `config/.env` created from `.env.example` with OpenAI credentials
 - [ ] `uv sync --all-groups` from repo root
 - [ ] `npm --prefix src/frontend install` from repo root
 
@@ -204,7 +204,7 @@ Send a link to [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md) and 
 - [ ] Close apps using ports **8000** and **5173**
 - [ ] Browser: one clean window, zoom 100%, bookmarks cleared of distractions
 - [ ] Terminal font size readable for the room (14–16pt minimum)
-- [ ] `.env` at repo root with valid OpenAI credentials
+- [ ] `config/.env` with valid OpenAI credentials
 - [ ] Optional: set `OPENWEATHER_API_KEY` for live weather (demo fallback works without it)
 
 ### 10 minutes before going live
@@ -741,7 +741,7 @@ What's the weather in Seattle?
 
 **Say (if no OpenWeather key):**
 
-> "Without an API key we get demo-mode weather data. Add `OPENWEATHER_API_KEY` to `.env` for live data — same agent flow."
+> "Without an API key we get demo-mode weather data. Add `OPENWEATHER_API_KEY` to `config/.env` for live data — same agent flow."
 
 **Say:**
 
@@ -974,7 +974,7 @@ UI uses Font Awesome icons with text labels (see `ToolRegistry.tsx`):
 
 | Symptom | Quick fix |
 | ------- | --------- |
-| `OPENAI_API_KEY is not set` in Final Response | Ensure `.env` is at **repo root**, restart backend |
+| `OPENAI_API_KEY is not set` in Final Response | Ensure `config/.env` exists, restart backend |
 | Blank timeline / network error | Backend not running on 8000; check Terminal 1 |
 | CORS or fetch failed | Use `localhost:5173` (Vite proxy), not file://; confirm route (`/demo/level-1` vs `/demo/level-2`) |
 | `npm ERR! enoent` while starting frontend | `cd src/frontend` then `npm run dev` (or `npm --prefix src/frontend run dev` from repo root) |

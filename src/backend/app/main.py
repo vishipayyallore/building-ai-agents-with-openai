@@ -98,11 +98,11 @@ async def home() -> HomeResponse:
         documentation=HomeDocumentation(
             swagger=HomeDocLink(
                 path="/docs",
-                description="Interactive OpenAPI docs; try requests in the browser.",
+                description="Swagger UI — interactive OpenAPI docs; try requests in the browser.",
             ),
             openapi=HomeDocLink(
                 path="/openapi.json",
-                description="Machine-readable OpenAPI schema for clients and codegen.",
+                description="OpenAPI 3.1 schema — machine-readable contract for clients and codegen",
             ),
             redoc=HomeDocLink(
                 path="/redoc",
