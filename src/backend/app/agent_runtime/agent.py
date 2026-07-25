@@ -69,7 +69,7 @@ async def run_agent_chat(message: str, session_id: str | None = None) -> ChatRes
         return ChatResponse(
             session_id=sid,
             request_id=rid,
-            response="Cannot run the agent without OPENAI_API_KEY. See docs/03-getting-started.md.",
+            response="Cannot run the agent without OPENAI_API_KEY. See docs/02-how-to-execute.md.",
             events=bus.events,
             **maturity_fields(CURRENT_MATURITY_LEVEL),
         )

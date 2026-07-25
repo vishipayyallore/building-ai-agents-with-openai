@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 
 class AgentMaturityLevel(IntEnum):
-    """Agent Maturity Levels — architectural lens from §4.1 of the master plan.
+    """Agent Maturity Levels — progression from stateless LLM to multi-agent systems.
 
     IntEnum: members serialize as ints (`maturityLevel`) and expose `.name`
     for `maturityName` without a second lookup table. Ordered comparisons are
@@ -29,7 +29,7 @@ def maturity_fields(level: AgentMaturityLevel) -> dict[str, int | str]:
     return {"maturity_level": int(level), "maturity_name": level.name}
 
 
-# Session 1 shipped maturity — Level 2 Proxy Agent (§4.1). Import for /health and agent chat.
+# Session 1 shipped maturity — Level 2 Proxy Agent. Import for /health and agent chat.
 CURRENT_MATURITY_LEVEL = AgentMaturityLevel.PROXY_AGENT
 
 # Level 1 baseline path — Direct LLM only (POST /api/llm).

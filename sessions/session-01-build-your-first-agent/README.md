@@ -28,7 +28,7 @@ Session 1 delivers Home + Level 1 (direct LLM) + Level 2 (Proxy Agent + MCP) in 
 ## Prerequisites
 
 - Python 3.13+, Node.js 20 LTS, uv, Git
-- OpenAI API key in `.env` (see root README)
+- OpenAI API key in `config/.env` (see root README [docs/02-how-to-execute.md](../../docs/02-how-to-execute.md))
 
 ## Repository tag
 
@@ -49,7 +49,7 @@ git checkout main
 
 The application lives at the repo root — not inside this session folder.
 
-1. Follow the root [README.md](../../README.md) (clone → `.env` → `uv sync` → backend + frontend)
+1. Follow the root [README.md](../../README.md) (clone → `config/.env` → `uv sync` → backend + frontend)
 2. Start **backend** and **frontend** only — MCP is spawned by the backend on each `POST /api/chat` (do not start `src/mcp-server` separately)
 3. Open [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
 4. Walk Level 1 and Level 2 using the presenter script: [demo-script.md](./demo-script.md)
