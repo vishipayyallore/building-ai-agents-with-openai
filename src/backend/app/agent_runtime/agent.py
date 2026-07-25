@@ -62,7 +62,7 @@ async def run_agent_chat(message: str, session_id: str | None = None) -> ChatRes
             DecisionEventType.SYSTEM_ERROR_RAISED,
             error=DecisionEventError(
                 code="MISSING_API_KEY",
-                message="OPENAI_API_KEY is not set. Copy .env.example to config/.env and add your key.",
+                message="Set OPENAI_API_KEY in .env (see docs/02-how-to-execute.md).",
                 recoverable=False,
             ),
         )

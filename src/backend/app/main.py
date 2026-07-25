@@ -40,7 +40,7 @@ OPENAPI_TAGS = [
     },
     {
         "name": "llm",
-        "description": "Level 1 Direct LLM — thin Agent + Runner call; no MCP tools, no Decision Timeline.",
+        "description": "Direct LLM call without agent runtime or tools.",
     },
     {
         "name": "chat",
@@ -98,11 +98,11 @@ async def home() -> HomeResponse:
         documentation=HomeDocumentation(
             swagger=HomeDocLink(
                 path="/docs",
-                description="Swagger UI — interactive OpenAPI 3.1 docs (try requests in the browser)",
+                description="Interactive OpenAPI docs; try requests in the browser.",
             ),
             openapi=HomeDocLink(
                 path="/openapi.json",
-                description="OpenAPI 3.1 schema — machine-readable contract for clients and codegen",
+                description="Machine-readable OpenAPI schema for clients and codegen.",
             ),
             redoc=HomeDocLink(
                 path="/redoc",
