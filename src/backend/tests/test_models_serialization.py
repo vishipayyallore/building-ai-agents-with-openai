@@ -6,6 +6,10 @@ from app.agent_runtime.models import (
     DecisionEvent,
     DecisionEventType,
     HealthResponse,
+    HomeDocLink,
+    HomeDocumentation,
+    HomeEndpoint,
+    HomeResponse,
     LlmResponse,
     maturity_fields,
 )
@@ -58,3 +62,28 @@ def test_llm_and_health_response_aliases():
     assert llm_raw["maturityName"] == "DIRECT_LLM_INTERACTION"
     assert health_raw["maturityLevel"] == 2
     assert health_raw["maturityName"] == "PROXY_AGENT"
+
+
+def test_home_response_aliases():
+    home = HomeResponse(
+        name="Agentic Engineering — Demo 1",
+        version="1.0.0",
+        summary="test",
+        demo="1",
+        documentation=HomeDocumentation(
+            swagger=HomeDocLink(path="/docs", description="Swagger UI"),
+            openapi=HomeDocLink(path="/openapi.json", description="OpenAPI 3.1"),
+            redoc=HomeDocLink(path="/redoc", description="ReDoc"),
+        ),
+        endpoints=[
+            HomeEndpoint(method="GET", path="/", description="API home"),
+        ],
+        **maturity_fields(AgentMaturityLevel.PROXY_AGENT),
+    )
+    raw = json.loads(home.model_dump_json(by_alias=True))
+    assert raw["documentation"]["swagger"]["path"] == "/docs"
+    assert raw["documentation"]["openapi"]["path"] == "/openapi.json"
+    assert raw["documentation"]["redoc"]["path"] == "/redoc"
+    assert raw["maturityLevel"] == 2
+    assert raw["maturityName"] == "PROXY_AGENT"
+    assert raw["endpoints"][0]["path"] == "/"

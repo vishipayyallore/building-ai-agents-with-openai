@@ -7,6 +7,8 @@ This document describes the current folder layout for the teaching-product repos
 ```text
 building-ai-agents-with-openai/
 |-- .env.example
+|-- config/
+|   `-- README.md
 |-- .gitignore
 |-- .github/
 |   |-- agents/
@@ -19,6 +21,8 @@ building-ai-agents-with-openai/
 |-- docs/
 |   |-- 01-folder-structure.md
 |   |-- 02-how-to-execute.md
+|   |-- 03-versioning-branching.md
+|   |-- 04-releases.md
 |   `-- images/
 |       `-- .gitkeep
 |-- LICENSE
@@ -28,7 +32,7 @@ building-ai-agents-with-openai/
 |   `-- session-01-build-your-first-agent/
 |       |-- README.md
 |       |-- release-notes.md
-|       |-- speaker-notes.md
+|       |-- demo-script.md
 |       `-- version.md
 |-- src/
 |   |-- backend/
@@ -169,3 +173,5 @@ It does not duplicate application source code.
 
 - [README.md](../README.md)
 - [02-how-to-execute.md](./02-how-to-execute.md)
+- [03-versioning-branching.md](./03-versioning-branching.md)
+- [04-releases.md](./04-releases.md)

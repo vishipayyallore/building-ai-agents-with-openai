@@ -5,6 +5,57 @@ from app.main import app
 
 
 @pytest.mark.asyncio
+async def test_home():
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        response = await client.get("/")
+    assert response.status_code == 200
+    assert "application/json" in response.headers["content-type"]
+    body = response.json()
+    assert body["name"] == "Agentic Engineering — Demo 1"
+    assert body["version"] == "1.0.0"
+    assert body["demo"] == "1"
+    assert body["maturityLevel"] == 2
+    assert body["maturityName"] == "PROXY_AGENT"
+    docs = body["documentation"]
+    assert docs["swagger"]["path"] == "/docs"
+    assert "Swagger" in docs["swagger"]["description"]
+    assert docs["openapi"]["path"] == "/openapi.json"
+    assert "OpenAPI 3.1" in docs["openapi"]["description"]
+    assert docs["redoc"]["path"] == "/redoc"
+    assert "ReDoc" in docs["redoc"]["description"]
+    paths = {endpoint["path"] for endpoint in body["endpoints"]}
+    assert {"/", "/health", "/docs", "/openapi.json", "/redoc", "/api/llm", "/api/chat"} <= paths
+
+
+@pytest.mark.asyncio
+async def test_openapi_schema_is_v31():
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        response = await client.get("/openapi.json")
+    assert response.status_code == 200
+    schema = response.json()
+    assert schema["openapi"].startswith("3.1")
+    assert schema["info"]["title"] == "Agentic Engineering — Demo 1"
+    assert schema["info"]["version"] == "1.0.0"
+    paths = schema["paths"]
+    assert "/" in paths
+    assert "/health" in paths
+    assert "/api/llm" in paths
+    assert "/api/chat" in paths
+
+
+@pytest.mark.asyncio
+async def test_swagger_docs_available():
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        response = await client.get("/docs")
+    assert response.status_code == 200
+    assert "swagger" in response.text.lower()
+    assert "/openapi.json" in response.text
+
+
+@pytest.mark.asyncio
 async def test_health():
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:

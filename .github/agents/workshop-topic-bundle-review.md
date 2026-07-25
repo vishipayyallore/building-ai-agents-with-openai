@@ -7,6 +7,8 @@ readonly: true
 
 # Session Bundle Review Subagent
 
+When invoked, follow checks in `.github/skills/topic-companions/SKILL.md`.
+
 Focus on:
 
 - `sessions/`

@@ -14,6 +14,7 @@ Use this skill when changes touch architecture, routes, runtime flow, or cross-s
 - `src/mcp-server`: MCP tool server used by backend via stdio
 - `sessions/`: released session content
 - `docs/`: operational and structure documentation
+- `config/`: local secrets (`config/.env`); template is root `.env.example`
 - `tools/`: helper scripts (not runtime)
 - `.github/`: rules, skills, agents, workflows
 

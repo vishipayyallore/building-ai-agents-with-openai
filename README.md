@@ -6,7 +6,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square)](https://react.dev/)
 [![OpenAI Agents SDK](https://img.shields.io/badge/OpenAI-Agents%20SDK-412991?style=flat-square)](https://openai.github.io/openai-agents-python/)
-[![MCP](https://img.shields.io/badge/MCP-FastMCP-orange?style=flat-square)](https://github.com/jlowin/fastmcp)
+[![MCP](https://img.shields.io/badge/MCP-FastMCP-orange?style=flat-square)](https://modelcontextprotocol.io/)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
 This is the hands-on workshop repository for **Swamy's Tech Skills Academy**.
@@ -15,21 +15,9 @@ with React + FastAPI + OpenAI Agent SDK + MCP across live sessions.
 
 Use it to learn, teach, and ship.
 
-> You are on active development branch `swamy/16jul-work`.
-> Stable releases are tracked on `main` and by version tags.
-
 ---
 
-## 1. Live Demo (Current Session)
-
-- Backend health: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
-- Frontend dashboard: [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
-
-Full run guide: [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
-
----
-
-## 2. Why this repo
+## 1. Why this repo
 
 Most AI tutorials stop at a notebook. Enterprises need reliable,
 evaluatable, and deployable systems.
@@ -47,7 +35,7 @@ cloud-native, multi-agent platform.
 
 ---
 
-## 3. Session roadmap and tags
+## 2. Session roadmap and tags
 
 | Session | Focus | Status | Guide/Tag |
 | ------- | ----- | :----: | --------- |
@@ -62,21 +50,9 @@ cloud-native, multi-agent platform.
 | 9 | Local Capstone | 🚧 Planned | Coming soon |
 | 10-15 | Platform and Enterprise Track | 🚧 Planned | Coming soon |
 
-Session 1 is available on `main` and on the current development branch.
-Intended release tag (create when publishing): `v1.0-build-your-first-agent`
-
-```bash
-git checkout main
-# After the release tag is published:
-# git fetch --tags && git checkout v1.0-build-your-first-agent
-```
-
-`main` tracks the latest stable release.
-`swamy/16jul-work` is the active development branch.
-
 ---
 
-## 4. Learning journey
+## 3. Learning journey
 
 ```mermaid
 flowchart TB
@@ -108,7 +84,7 @@ flowchart TB
 
 ---
 
-## 5. Architecture
+## 4. Architecture
 
 ```mermaid
 flowchart LR
@@ -126,7 +102,7 @@ flowchart LR
 
 ---
 
-## 6. Stack
+## 5. Stack
 
 - Frontend: React 19, TypeScript, Vite, Tailwind CSS
 - Backend: Python 3.13, FastAPI, Pydantic, OpenAI Agent SDK
@@ -135,7 +111,7 @@ flowchart LR
 
 ---
 
-## 7. Quick start (3 minutes to first agent)
+## 6. Quick start (3 minutes to first agent)
 
 ### Prerequisites
 
@@ -147,8 +123,8 @@ flowchart LR
 
 ```powershell
 uv sync --all-groups
-Copy-Item .env.example .env
-# Add OPENAI_API_KEY to .env
+Copy-Item .env.example config\.env
+# Add OPENAI_API_KEY to config/.env
 ```
 
 ### 2) Run backend
@@ -165,14 +141,16 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2)
-and validate [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health).
+Open [http://localhost:5173/demo/level-2](http://localhost:5173/demo/level-2).
+Validate API home [http://127.0.0.1:8000/](http://127.0.0.1:8000/),
+Swagger [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs),
+and health [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health).
 
 Full guide: [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
 
 ---
 
-## 8. Project structure
+## 7. Project structure
 
 ```text
 building-ai-agents-with-openai/
@@ -184,8 +162,8 @@ building-ai-agents-with-openai/
 │   ├── backend/                 # FastAPI + Agents SDK runtime
 │   ├── frontend/                # React dashboard
 │   └── mcp-server/              # MCP tool server
-├── tools/                       # Helper scripts (not runtime)
-├── .env.example
+├── config/                      # Local secrets home (`config/.env`)
+├── .env.example                 # Template → copy to config/.env
 ├── pyproject.toml
 └── README.md
 ```
@@ -194,7 +172,7 @@ Details: [docs/01-folder-structure.md](docs/01-folder-structure.md)
 
 ---
 
-## 9. How to use this repo
+## 8. How to use this repo
 
 If you are a learner:
 
@@ -206,11 +184,11 @@ If you are an instructor:
 
 1. Use this repo as your teaching product.
 2. Prefer published tags for reproducible demos once tags are created.
-3. Use `swamy/16jul-work` for staging upcoming changes.
+3. Use a `swamy/**` branch for staging upcoming changes.
 
 ---
 
-## 10. Docs and license
+## 9. Docs and license
 
-- Docs: [docs/01-folder-structure.md](docs/01-folder-structure.md), [docs/02-how-to-execute.md](docs/02-how-to-execute.md)
+- Docs: [docs/01-folder-structure.md](docs/01-folder-structure.md), [docs/02-how-to-execute.md](docs/02-how-to-execute.md), [docs/03-versioning-branching.md](docs/03-versioning-branching.md), [docs/04-releases.md](docs/04-releases.md)
 - License: MIT, see [LICENSE](LICENSE)

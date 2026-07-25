@@ -63,7 +63,7 @@ export function MaturityContrastPanel() {
             <ul className="mt-3 space-y-1.5 text-xs text-slate-600">
               <li>
                 <i className="fa-solid fa-minus mr-1.5 text-slate-400" />
-                Stateless — no runtime boundary
+                Stateless — no orchestration boundary
               </li>
               <li>
                 <i className="fa-solid fa-minus mr-1.5 text-slate-400" />
@@ -106,13 +106,12 @@ export function MaturityContrastPanel() {
         </div>
 
         <p className="mt-4 text-xs leading-relaxed text-slate-500">
-          Maturity levels are a conceptual ladder, not a certification model.
-          Canonical definition for this repo: the{" "}
+          Maturity levels are a conceptual ladder, not a certification model. Full
+          taxonomy:{" "}
           <code className="rounded bg-slate-100 px-1 py-0.5 text-[11px] text-slate-700">
-            AgentMaturityLevel
-          </code>{" "}
-          enum in the backend. Collapse this panel once the room has seen the
-          contrast. Try{" "}
+            docs/02-master-plan.md §4.1
+          </code>
+          . Collapse this panel once the room has seen the contrast. Try{" "}
           <Link
             to="/demo/level-1"
             className="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-slate-900"

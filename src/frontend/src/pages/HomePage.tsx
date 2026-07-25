@@ -80,12 +80,9 @@ export function HomePage() {
             Agent Maturity Levels
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-slate-600">
-            Conceptual ladder used across this workshop series (see{" "}
-            <code className="rounded bg-slate-100 px-1 text-xs">
-              AgentMaturityLevel
-            </code>{" "}
-            in the backend). Demo 1 covers Levels 1 and 2; later sessions climb
-            the rest.
+            Conceptual ladder from{" "}
+            <code className="rounded bg-slate-100 px-1 text-xs">docs/02-master-plan.md §4.1</code>.
+            Demo 1 covers Levels 1 and 2; later sessions climb the rest.
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

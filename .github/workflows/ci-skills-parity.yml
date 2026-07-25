@@ -1,4 +1,4 @@
-name: Skills Parity (.github)
+name: Skills Inventory Guard (.github)
 
 on:
   push:
@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  skills-parity:
+  skills-inventory:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -52,4 +52,20 @@ jobs:
               exit_code=1
             }
           done
+
+          # Reverse: every first-column skill name in the README inventory table must exist
+          while IFS= read -r skill; do
+            [ -z "$skill" ] && continue
+            if [ ! -f ".github/skills/$skill/SKILL.md" ]; then
+              echo "README inventory lists \`$skill\` but .github/skills/$skill/SKILL.md is missing"
+              exit_code=1
+            fi
+          done < <(awk -F'|' '
+            /^\|[[:space:]]*`[a-z0-9-]+`[[:space:]]*\|/ {
+              gsub(/`/, "", $2)
+              gsub(/^[[:space:]]+|[[:space:]]+$/, "", $2)
+              print $2
+            }
+          ' .github/skills/README.md)
+
           exit $exit_code

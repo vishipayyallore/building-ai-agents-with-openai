@@ -29,6 +29,7 @@ It contains one evolving app stack:
 - `src/backend`: API + runtime logic + backend tests
 - `src/frontend`: web UI + frontend tests
 - `src/mcp-server`: MCP tools + MCP tests
+- `config/`: local secrets (`config/.env`); template is root `.env.example`
 - `tools/`: helper scripts (not part of the runtime app)
 - `.github/`: Copilot instructions, rules, skills, agents, workflows
 
@@ -49,6 +50,8 @@ npm install
 npm run dev
 ```
 
+Use `npm install` for first-time setup. For CI-equivalent checks, prefer `npm ci` when `package-lock.json` is present.
+
 ## Quality checks
 
 Backend and MCP:
@@ -62,9 +65,16 @@ Frontend:
 
 ```powershell
 cd src/frontend
+npm ci
 npm run lint
 npm test
 npm run build
+```
+
+Documentation (optional local mirror of `ci-documentation.yml`):
+
+```powershell
+npx --yes markdownlint-cli2 "README.md" "docs/**/*.md" "sessions/**/*.md" "config/**/*.md"
 ```
 
 ## Documentation expectations

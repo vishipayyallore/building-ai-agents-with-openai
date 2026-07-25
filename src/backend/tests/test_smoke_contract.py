@@ -1,8 +1,7 @@
-"""HTTP smoke contract via ASGITransport (no live OpenAI/MCP required).
+"""HTTP smoke contract — mirrors tools/psscripts/e2e-smoke.ps1 via ASGITransport.
 
-Default pytest runs exclude ``integration`` tests. Marked integration tests
-need ``OPENAI_API_KEY`` and are run locally when that env var is set — there is
-no separate CI smoke workflow for them yet.
+Default pytest runs exclude ``integration`` tests (no live OpenAI/MCP).
+The optional CI smoke job runs ``pytest -m integration`` when OPENAI_API_KEY is set.
 """
 
 import os
@@ -11,6 +10,21 @@ import pytest
 from httpx import ASGITransport, AsyncClient
 
 from app.main import app
+
+
+@pytest.mark.asyncio
+async def test_smoke_home_contract():
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        response = await client.get("/")
+    body = response.json()
+    assert response.status_code == 200
+    assert "application/json" in response.headers["content-type"]
+    assert body["documentation"]["swagger"]["path"] == "/docs"
+    assert body["documentation"]["openapi"]["path"] == "/openapi.json"
+    assert body["documentation"]["redoc"]["path"] == "/redoc"
+    assert body["maturityLevel"] == 2
+    assert body["maturityName"] == "PROXY_AGENT"
 
 
 @pytest.mark.asyncio
